@@ -33,6 +33,8 @@ public class Monom implements function{
 		this._power = p;
 	}
 
+	
+	
 	public Monom(double a, int b){
 		this.set_coefficient(a);
 		this.set_power(b);
@@ -94,6 +96,13 @@ public class Monom implements function{
 		}
 		
 	}
+		
+		//* check s legth above 1 char
+		//* check if the s contain X else take the stirng and pare_duble
+		//  and put pow <= 0
+		//* run on string and get the coeff till you reach the x
+	   //  get ^ index in the s and put the next chars in pow
+		;}
 	
 	public void add(Monom m) {;}
 	
