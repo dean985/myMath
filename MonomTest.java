@@ -30,7 +30,7 @@ public class MonomTest {
 			String s = m.toString();
 			m = new Monom(s);
 			double fx = m.f(i);
-			System.out.println(i+") "+m +"    \tisZero: "+m.isZero()+"\t f("+i+") = "+fx);
+			System.out.println(i+") "+m +" \tisZero: "+m.isZero()+"\t f("+i+") = "+fx);
 		}
 	}
 	private static void test2() {
