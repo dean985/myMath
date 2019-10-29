@@ -2,6 +2,12 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - MonomTest",
+            "request": "launch",
+            "mainClass": "myMath.MonomTest"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - edit_test",
             "request": "launch",
             "mainClass": "edit_test"
