@@ -65,6 +65,7 @@ public class Monom implements function{
 		ans = this.get_coefficient()*Math.pow(x, p);
 		return ans;
 	} 
+	
 	public boolean isZero() {
 		return this.get_coefficient() == 0;
 	}
@@ -102,7 +103,7 @@ public class Monom implements function{
 		//  and put pow <= 0
 		//* run on string and get the coeff till you reach the x
 	   //  get ^ index in the s and put the next chars in pow
-		;}
+		
 	
 	public void add(Monom m) {;}
 	
@@ -110,6 +111,11 @@ public class Monom implements function{
 	
 	public String toString() {
 		String ans = "";
+		ans = _coefficient+"";
+		if(_power != 0)
+			ans += "x"+"^"+_power;
+
+		
 		return ans;
 	}
 	// you may (always) add other methods.
