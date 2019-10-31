@@ -71,16 +71,23 @@ public class Monom implements function{
 	}
 	// ***************** add your code below **********************
 	public Monom(String s) {
+		double coeffD;
 		if(s.length()>0){
 			if (s.contains("x")){
 				//Coefficient
 				String coeff = s.substring(0,s.indexOf("x"));
-				double coeffD = Double.parseDouble(coeff);
+				if(s.charAt(0) == 'x' )
+					coeffD = 1.0;
+				if (s.charAt(0) == '-' && s.charAt(1) == 'x')
+					coeffD = -1.0;
+				else
+					coeffD = Double.parseDouble(coeff);
+					
 				this.set_coefficient(coeffD);
 				//Power
 				if(s.contains("^")){
 					int indexP = s.indexOf("^");
-					Double p = Double.parseDouble(s.substring(indexP));
+					Double p = Double.parseDouble(s.substring(indexP+1));
 				}
 				else{
 					this.set_power(1);
