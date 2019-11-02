@@ -65,21 +65,29 @@ public class Monom implements function{
 		ans = this.get_coefficient()*Math.pow(x, p);
 		return ans;
 	} 
+	
 	public boolean isZero() {
 		return this.get_coefficient() == 0;
 	}
 	// ***************** add your code below **********************
 	public Monom(String s) {
+		double coeffD;
 		if(s.length()>0){
 			if (s.contains("x")){
 				//Coefficient
 				String coeff = s.substring(0,s.indexOf("x"));
-				double coeffD = Double.parseDouble(coeff);
+				if(s.charAt(0) == 'x' )
+					coeffD = 1.0;
+				if (s.charAt(0) == '-' && s.charAt(1) == 'x')
+					coeffD = -1.0;
+				else
+					coeffD = Double.parseDouble(coeff);
+					
 				this.set_coefficient(coeffD);
 				//Power
 				if(s.contains("^")){
 					int indexP = s.indexOf("^");
-					Double p = Double.parseDouble(s.substring(indexP));
+					Double p = Double.parseDouble(s.substring(indexP+1));
 				}
 				else{
 					this.set_power(1);
@@ -116,6 +124,11 @@ public class Monom implements function{
 	
 	public String toString() {
 		String ans = "";
+		ans = _coefficient+"";
+		if(_power != 0)
+			ans += "x"+"^"+_power;
+
+		
 		return ans;
 	}
 	// you may (always) add other methods.
