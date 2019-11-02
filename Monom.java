@@ -87,7 +87,9 @@ public class Monom implements function{
 				//Power
 				if(s.contains("^")){
 					int indexP = s.indexOf("^");
-					Double p = Double.parseDouble(s.substring(indexP+1));
+					//Double p = Double.parseDouble(s.substring(indexP+1));
+					int p = Integer.parseInt(s.substring(indexP+1));
+					this.set_power(p);
 				}
 				else{
 					this.set_power(1);
@@ -104,8 +106,21 @@ public class Monom implements function{
 		}
 		
 	}
+	
+	public boolean equals(Monom m){
+		if(m.isZero() && this.isZero()){
+			return true;
+		}
+		
+		if (this.get_coefficient() == m.get_coefficient() 
+			&& this.get_power() == m.get_power()){
+			return true;
+		}
+		return false;
+		
+	}
 	public static void main(String[] args) {
-		String s = "2x^2";
+		String s = "5x^3";
 		Monom m = new Monom (s);
 		System.out.println(m.get_coefficient());
 		System.out.println(m.get_power());
