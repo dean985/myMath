@@ -96,13 +96,19 @@ public class Monom implements function{
 		}
 		
 	}
+	public static void main(String[] args) {
+		String s = "2x^2";
+		Monom m = new Monom (s);
+		System.out.println(m.get_coefficient());
+		System.out.println(m.get_power());
+	}
 		
 		//* check s legth above 1 char
 		//* check if the s contain X else take the stirng and pare_duble
 		//  and put pow <= 0
 		//* run on string and get the coeff till you reach the x
 	   //  get ^ index in the s and put the next chars in pow
-		;}
+		
 	
 	public void add(Monom m) {;}
 	
