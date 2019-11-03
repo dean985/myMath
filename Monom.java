@@ -59,6 +59,11 @@ public class Monom implements function{
 		}
 		return new Monom(this.get_coefficient()*this.get_power(), this.get_power()-1);
 	}
+	/**
+	 * Return the value of the monom at a specific value of x
+	 * @param x
+	 * @return result (double)
+	 */
 	public double f(double x) {
 		double ans=0;
 		double p = this.get_power();
@@ -70,6 +75,11 @@ public class Monom implements function{
 		return this.get_coefficient() == 0;
 	}
 	// ***************** add your code below **********************
+	/**
+	 * A method to proccess human readable version of monom (represented as a String)
+	 * to an instance of the monom object.
+	 * @param s
+	 */
 	public Monom(String s) {
 		double coeffD;
 		if(s.length()>0){
@@ -106,13 +116,21 @@ public class Monom implements function{
 		}
 		
 	}
-	
+	/**
+	 * A method to determine whether two monoms are equal
+	 * The coefficient comparison is being applies using EPSILON. Two coefficients are considered equal
+	 * when their difference is less or equal to EPSILON
+	 * @param m
+	 * @return true if monoms are equal , false otherwise.
+	 */
 	public boolean equals(Monom m){
 		if(m.isZero() && this.isZero()){
 			return true;
 		}
-		
-		if (this.get_coefficient() == m.get_coefficient() 
+		double difference = this.get_coefficient() - m.get_coefficient(); // this variable represents the substraction of both coefficients
+																		  // if the difference is smaller than EPSILON (as defined above)
+																		  // then the coeffiencts are equal
+		if (difference <=EPSILON 
 			&& this.get_power() == m.get_power()){
 			return true;
 		}
@@ -122,8 +140,11 @@ public class Monom implements function{
 	public static void main(String[] args) {
 		String s = "5x^3";
 		Monom m = new Monom (s);
-		System.out.println(m.get_coefficient());
-		System.out.println(m.get_power());
+		//System.out.println(m.get_coefficient());
+		//System.out.println(m.derivative());
+		Monom m1 = new Monom(-3, -2);
+		m1.multipy(m);
+		System.out.println(m1.toString());
 	}
 		
 		//* check s legth above 1 char
@@ -134,9 +155,29 @@ public class Monom implements function{
 		
 	
 	public void add(Monom m) {;}
-	
-	public void multipy(Monom d) {;}
-	
+	/**
+	 * Multiply two monoms. coefficient and power are being multiplied seperatly.
+	 * @param d
+	 */
+	public void multiply(Monom d) {
+		// initial test if one of the is monom zero
+		if(this.isZero() || d.isZero()){
+			this.set_coefficient(0);
+			this.set_power(0);
+			return;
+		}
+		// coefficient multiplication
+		double coeff = this.get_coefficient() * d.get_coefficient();
+		this.set_coefficient(coeff);
+		
+		//Power 
+			int pow = this.get_power() + d.get_power();
+			this.set_power(pow);
+	}
+	/**
+	 * Creates a human-readable string of a monom.
+	 * @return String representation of monom
+	 */
 	public String toString() {
 		String ans = "";
 		ans = _coefficient+"";
