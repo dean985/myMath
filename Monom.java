@@ -67,7 +67,10 @@ public class Monom implements function{
 	} 
 	
 	public boolean isZero() {
-		return this.get_coefficient() == 0;
+		boolean iszero = this.get_coefficient() == 0;
+		if(iszero)
+			this.set_power(0);
+		return iszero;
 	}
 	// ***************** add your code below **********************
 	public Monom(String s) {
@@ -132,8 +135,29 @@ public class Monom implements function{
 		//* run on string and get the coeff till you reach the x
 	   //  get ^ index in the s and put the next chars in pow
 		
-	
-	public void add(Monom m) {;}
+	/**
+	 * add the recived monom to the current monom
+	 * if the power is diffrent throw exaption
+	 * @param m - the recived monom
+	 */
+	public void add(Monom m) 
+	{
+		
+		if (m.get_power() == this.get_power())
+		{
+			this.set_coefficient(this.get_coefficient()+ m.get_coefficient());//sum the current coefficent
+			
+			
+		}
+		if(this.isZero())
+		{	
+				this.set_coefficient(m.get_coefficient()); 
+				this.set_power(m.get_power());
+		}
+		else
+			throw new RuntimeException("Monom Error - Unabled to sum the monom");
+
+	}
 	
 	public void multipy(Monom d) {;}
 	
