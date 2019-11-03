@@ -170,10 +170,13 @@ public class Monom implements function{
 			
 			
 		}
-		if(this.isZero())
+		else if(this.isZero())
 		{	
 				this.set_coefficient(m.get_coefficient()); 
 				this.set_power(m.get_power());
+		}
+		else if (m.isZero()){
+			return;
 		}
 		else
 			throw new RuntimeException("Monom Error - Unabled to sum the monom");
