@@ -31,6 +31,7 @@ public class Monom implements function{
 	private void set_power(int p) {
 		if(p<0) {throw new RuntimeException("ERR the power of Monom should not be negative, got: "+p);}
 		this._power = p;
+		
 	}
 
 	
@@ -170,10 +171,13 @@ public class Monom implements function{
 			
 			
 		}
-		if(this.isZero())
+		else if(this.isZero())
 		{	
 				this.set_coefficient(m.get_coefficient()); 
 				this.set_power(m.get_power());
+		}
+		else if (m.isZero()){
+			return;
 		}
 		else
 			throw new RuntimeException("Monom Error - Unabled to sum the monom");
