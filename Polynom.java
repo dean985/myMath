@@ -1,6 +1,7 @@
 package myMath;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Iterator;
 import java.util.function.Predicate;
 
@@ -15,12 +16,13 @@ import myMath.Monom;
  *
  */
 public class Polynom implements Polynom_able{
-
+	ArrayList<Monom> polynom_list = new ArrayList<Monom>();
+	
 	/**
-	 * Zero (empty polynom)
+	 * Zero (empty polynom_list)
 	 */
 	public Polynom() {
-		;
+		this.polynom_list = new ArrayList<Monom>();
 	}
 	/**
 	 * init a Polynom from a String such as:
@@ -28,12 +30,21 @@ public class Polynom implements Polynom_able{
 	 * @param s: is a string represents a Polynom
 	 */
 	public Polynom(String s) {
-		;
+		s = s.replaceAll("-","+-"); //excluding identical process of substraction
+		String[] poly = s.split("\\+");
+		for (String str:poly){
+			this.polynom_list.add(new Monom(str));
+		} 
+		//Collections.sort(polynom_list, new Monom_Comperator());		// sorted by power
 	}
 	@Override
 	public double f(double x) {
-		// TODO Auto-generated method stub
-		return 0;
+		double res = 0;			
+		for(Monom m: this.polynom_list){
+			res += m.f(x);
+		}
+		return res;
+
 	}
 
 	@Override

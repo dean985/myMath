@@ -31,6 +31,7 @@ public class Monom implements function{
 	private void set_power(int p) {
 		if(p<0) {throw new RuntimeException("ERR the power of Monom should not be negative, got: "+p);}
 		this._power = p;
+		
 	}
 
 	

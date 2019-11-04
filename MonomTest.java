@@ -21,10 +21,13 @@ public class MonomTest {
 	public static void main(String[] args) {
 		// test1();
 		// test2();
-		test3();
+		//test3();
+		//test4();
+		//test5();
 	}
 	private static void test3()
 	{
+		//test for method add
 		System.out.println("*****  Test3:  *****");
 		String[] monoms1 = {"2", "-x","-3.2x^2","0"};
 		String[] monoms2 = {"2", "-x","-3.2x^2","0"};
@@ -35,10 +38,11 @@ public class MonomTest {
 			{
 				Monom temp = new Monom(m1);
 				Monom m2 = new Monom(monoms2[j]);
-				System.out.print(i+") "+ temp );
+				System.out.print(i+") "+ temp );	
+				
 				try {
 
-					temp.add(m2);
+				temp.add(m2);
 					System.out.print(" +"+m2+"= "+temp+"\n");
 
 				} catch (Exception e) {
@@ -50,6 +54,37 @@ public class MonomTest {
 			}
 		}
 	}
+	private static void test4(){
+		//test for multiply method
+		System.out.println("*****  Test4:  *****");
+		String[] monoms1 = {"2", "-x","-3.2x^2","0"};
+		String[] monoms2 = {"2", "-x","-3.2x^2","0"};
+		for(int i=0;i<monoms1.length;i++) 
+		{
+			Monom m1 = new Monom(monoms1[i]);
+			for (int j = 0; j < monoms2.length; j++) 
+			{
+				Monom temp = new Monom(m1);
+				Monom m2 = new Monom(monoms2[j]);
+				System.out.print(i+") "+ temp );
+				temp.multiply(m2);
+				System.out.print(" *"+m2+"= "+temp+"\n");
+			}
+		}
+	}
+	private static void test5(){
+		String[] arr = {"2.2x^-1", "-x^2","(2*3)*x^3","-3*x^3", "-3*x^(3+1)","4ax^6","2x^2" };
+		for(int i= 0 ; i<arr.length; i++){
+			System.out.print("\n"+ arr[i]+" ");
+			try{	
+				Monom temp = new Monom(arr[i]);
+			}
+			catch(Exception e){
+				System.out.println("ERROR");
+			}
+			
+		}
+	
 	private static void test1() {
 		System.out.println("*****  Test1:  *****");
 		String[] monoms = {"2", "-x","-3.2x^2","0"};
