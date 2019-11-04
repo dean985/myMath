@@ -5,26 +5,31 @@ public class PolynomTest {
 	public static void main(String[] args) {
 		//test1();
 		//test2();
-		test3();
-		//test4();//polynom add test
+		//test3();
+		test4();//polynom add test
+
 	}
 	/**
 	 * tester for the add(polynom_able) 
 	 */
 	public static void test4() {
 		
-		String[] monoms = {"1","x^2+x","5x^3+2x^2+4"};
-		for (String string : monoms) {
-			
-			Polynom p2 = new Polynom(string);
-			for (String string1 : monoms) {
-				System.out.print(p2.toString()+" + ");
+		String[] monoms = {"x^2+x","5x^3+2x^2+4"};
+		
+		Polynom p2 = new Polynom("x^2+x");
 
-				Polynom p1 = new Polynom(string1);
-				System.out.print(p1 +" = ");
-				//p2.add(p1);
-				System.out.println(p2.toString());
-			}
+		for (String string : monoms) {
+
+			//Polynom p = new Polynom("2x^2+4x+1");
+			//System.out.println(p2.toString());
+			// for (String string1 : monoms) {
+			// 	System.out.print(p2.toString()+" + ");
+
+			// 	//Polynom p1 = new Polynom(string1);
+			// 	//System.out.print(p1 +" = ");
+			// 	//p2.add(p1);
+			// 	System.out.println(p2.toString());
+			// }
 		
 		}
 			

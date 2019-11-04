@@ -135,7 +135,7 @@ public class Polynom implements Polynom_able{
 				str += this.polynom_list.get(i).toString() + " + ";
 			}
 			else{
-				str += this.polynom_list.get(length-1).toString ;
+				//str += this.polynom_list.get(length-1).toString ;
 			}
 		}
 		return str;
