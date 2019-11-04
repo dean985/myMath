@@ -92,7 +92,7 @@ public class Monom implements function{
 				String coeff = s.substring(0,s.indexOf("x"));
 				if(s.charAt(0) == 'x' )
 					coeffD = 1.0;
-				if (s.charAt(0) == '-' && s.charAt(1) == 'x')
+				else if (s.charAt(0) == '-' && s.charAt(1) == 'x')
 					coeffD = -1.0;
 				else
 					coeffD = Double.parseDouble(coeff);
