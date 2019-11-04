@@ -16,6 +16,7 @@ import myMath.Monom;
  *
  */
 public class Polynom implements Polynom_able{
+	
 	ArrayList<Monom> polynom_list = new ArrayList<Monom>();
 	
 	/**
@@ -49,7 +50,13 @@ public class Polynom implements Polynom_able{
 
 	@Override
 	public void add(Polynom_able p1) {
-		// TODO Auto-generated method stub
+		
+		Polynom p = new Polynom(p1.toString());
+
+		for (int i = 0; i<= this.polynom_list.size();i++) 
+		{
+			this.polynom_list.get(i).add(p.polynom_list.get(i));
+		}
 		
 	}
 
