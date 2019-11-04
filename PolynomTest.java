@@ -1,10 +1,12 @@
 package myMath;
 
+
 public class PolynomTest {
 	public static void main(String[] args) {
 		//test1();
 		//test2();
 		test3();
+		
 	}
 	public static void test1() {
 		Polynom p1 = new Polynom();
@@ -39,8 +41,9 @@ public class PolynomTest {
 		System.out.println("from string: "+pp1);
 	}
 	public static void test3(){
-		Polynom p1 = new Polynom("2x^2+3x");
+		Polynom p = new Polynom("2x^2+4x+1");
 		//System.out.println(p1.polynom_list.get(0).toString());
-		System.out.println(p1.f(1));
+		//Polynom p = new Polynom();
+		System.out.println(p.toString());
 	}
 }

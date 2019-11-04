@@ -23,6 +23,7 @@ public class Polynom implements Polynom_able{
 	 */
 	public Polynom() {
 		this.polynom_list = new ArrayList<Monom>();
+		this.polynom_list.add(Monom.ZERO);
 	}
 	/**
 	 * init a Polynom from a String such as:
@@ -116,6 +117,21 @@ public class Polynom implements Polynom_able{
 	public void multiply(Monom m1) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public String toString(){
+		String str="";
+		int length = this.polynom_list.size();		// size of arraylist of monoms
+		for(int i = 0; i< length ; i++){
+			if (i<length-2){
+				str += this.polynom_list.get(i).toString() + " + ";
+			}
+			else{
+				str += this.polynom_list.get(length-1).toString ;
+			}
+		}
+		return str;
 	}
 	
 }
