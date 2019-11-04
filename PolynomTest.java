@@ -5,8 +5,8 @@ public class PolynomTest {
 	public static void main(String[] args) {
 		//test1();
 		//test2();
-		//test3();
-		test4();//polynom add test
+		test3();
+		//test4();//polynom add test
 	}
 	/**
 	 * tester for the add(polynom_able) 
@@ -22,7 +22,7 @@ public class PolynomTest {
 
 				Polynom p1 = new Polynom(string1);
 				System.out.print(p1 +" = ");
-				p2.add(p1);
+				//p2.add(p1);
 				System.out.println(p2.toString());
 			}
 		
@@ -62,9 +62,8 @@ public class PolynomTest {
 		System.out.println("from string: "+pp1);
 	}
 	public static void test3(){
-		Polynom p = new Polynom("2x^2+4x+1");
+		Polynom p = new Polynom("2x^2+x");
 		//System.out.println(p1.polynom_list.get(0).toString());
 		//Polynom p = new Polynom();
-		System.out.println(p.toString());
-	}
+	}	
 }

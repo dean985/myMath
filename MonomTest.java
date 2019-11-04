@@ -24,6 +24,11 @@ public class MonomTest {
 		//test3();
 		//test4();
 		//test5();
+		test6();
+	}
+	private static void test6(){
+		String st = "x";
+		Monom m = new Monom (st);
 	}
 	private static void test3()
 	{

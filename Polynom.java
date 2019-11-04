@@ -131,7 +131,7 @@ public class Polynom implements Polynom_able{
 		String str="";
 		int length = this.polynom_list.size();		// size of arraylist of monoms
 		for(int i = 0; i< length ; i++){
-			if (i<length-2){
+			if (i<=length-2){
 				str += this.polynom_list.get(i).toString() + " + ";
 			}
 			else{
