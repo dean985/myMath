@@ -106,4 +106,14 @@ public class PolynomTest {
 		System.out.println(m.toString());
 		
 	}
+	/**
+	 * Test for add(Polynom_able)
+	 */
+	public static void test6(){
+		Polynom_able p1 = new Polynom("3x^2+2x");
+		Polynom p2 = new Polynom("4x^2+4x");
+		Polynom p3 = new Polynom("x^3");
+
+		System.out.println(p1.add(p2).toString);
+	}
 }

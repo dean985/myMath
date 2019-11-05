@@ -62,8 +62,11 @@ public class Polynom implements Polynom_able{
 		{
 			this.polynom_list.get(i).add(p.polynom_list.get(i));
 		}
-		
+			
 	}
+
+		
+		
 
 	@Override
 	public void add(Monom m1) {
