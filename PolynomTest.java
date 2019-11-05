@@ -7,7 +7,8 @@ public class PolynomTest {
 		//test2();
 		//test3();
 		//test4();//polynom add test
-		test5();
+		//test5();
+		test6();
 
 	}
 	/**
@@ -82,5 +83,15 @@ public class PolynomTest {
 		Polynom m = new Polynom("3x^3+2x^2+x+1");
 		System.out.println(m.toString());
 		
+	}
+	/**
+	 * Test for add(Polynom_able)
+	 */
+	public static void test6(){
+		Polynom_able p1 = new Polynom("3x^2+2x");
+		Polynom p2 = new Polynom("4x^2+4x");
+		Polynom p3 = new Polynom("x^3");
+
+		System.out.println(p1.add(p2).toString);
 	}
 }

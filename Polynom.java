@@ -38,7 +38,7 @@ public class Polynom implements Polynom_able{
 		for (String str:poly){
 			this.polynom_list.add(new Monom(str));
 		} 
-		Collections.sort(polynom_list, new Monom_Comperator());		// sorted by power
+		//Collections.sort(polynom_list, new Monom_Comperator());		// sorted by power
 	}
 	@Override
 	public double f(double x) {
@@ -54,13 +54,15 @@ public class Polynom implements Polynom_able{
 	public void add(Polynom_able p1) {
 		
 		Polynom p = new Polynom(p1.toString());
-
 		for (int i = 0; i<= this.polynom_list.size();i++) 
 		{
 			this.polynom_list.get(i).add(p.polynom_list.get(i));
 		}
-		
+			
 	}
+
+		
+		
 
 	@Override
 	public void add(Monom m1) {
