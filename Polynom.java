@@ -80,21 +80,16 @@ public class Polynom implements Polynom_able{
 	public void add(Polynom_able p1) {
 		
 		Polynom p = new Polynom(p1.toString());
-
-		for (int i = 0; i <this.polynom_list.size();i++) 
-		{
-			this.polynom_list.get(i).add(p.polynom_list.get(i));
-		}
-			
+		this.polynom_list.addAll(p.polynom_list);
+		Polynom res = new Polynom(this.toString());
+		this.polynom_list= res.polynom_list;	
 	}
-
-		
-		
 
 	@Override
 	public void add(Monom m1) {
-		// TODO Auto-generated method stub
-		
+		this.polynom_list.add(m1);
+		Polynom res = new Polynom(this.toString());
+		this.polynom_list= res.polynom_list;
 	}
 
 	@Override

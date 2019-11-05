@@ -3,14 +3,43 @@ package myMath;
 
 public class PolynomTest {
 	public static void main(String[] args) {
-		test1();
+		//test1();
 		//test2();
 		//test3();
 		//test4();//polynom add test
 		//test5();
+		test6(); // test for method for polynom add(Monom m)
 
 	}
+	/**
+	 * test for add (monom m)
+	 */
+	public static void test6(){
+		String[] googd = {"x^2+x","5x^3+2x^2+4"};
+		
+		Monom m1 = new Monom("x^2");
 
+		//System.out.println(p2.toString());
+		for (String string : googd) {
+
+			//Polynom p = new Polynom("2x^2+4x+1");
+			//System.out.println(p2.toString());
+			for (String string1 : googd) 
+			{
+				System.out.print(m1.toString()+" +  ");
+				Polynom p1 = new Polynom(string1);
+				System.out.print(p1 +" = ");
+				try {
+					p1.add(m1);
+				System.out.println(p1.toString());
+				} catch (Exception e) {
+					System.out.println("faild to calculate");
+				}
+				
+			}
+		
+		}
+	}
 	/**
 	 * tester for the add(polynom_able) 
 	 */
@@ -126,14 +155,5 @@ public class PolynomTest {
 		System.out.println(m.toString());
 		
 	}
-	/**
-	 * Test for add(Polynom_able)
-	 */
-	public static void test6(){
-		Polynom_able p1 = new Polynom("3x^2+2x");
-		Polynom p2 = new Polynom("4x^2+4x");
-		Polynom p3 = new Polynom("x^3");
-
-		System.out.println(p1.add(p2).toString);
-	}
+	
 }
