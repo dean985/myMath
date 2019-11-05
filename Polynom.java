@@ -2,6 +2,7 @@ package myMath;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.InputMismatchException;
 import java.util.Iterator;
 import java.util.function.Predicate;
 
@@ -38,7 +39,9 @@ public class Polynom implements Polynom_able{
 		for (String str:poly){
 			this.polynom_list.add(new Monom(str));
 		} 
-		Collections.sort(polynom_list, new Monom_Comperator());		// sorted by power
+		Monom_Comperator comp = new Monom_Comperator();
+		polynom_list.sort(comp);
+		//.sort(new compare(,));	// sorted by power
 	}
 	@Override
 	public double f(double x) {
@@ -55,7 +58,7 @@ public class Polynom implements Polynom_able{
 		
 		Polynom p = new Polynom(p1.toString());
 
-		for (int i = 0; i<= this.polynom_list.size();i++) 
+		for (int i = 0; i <this.polynom_list.size();i++) 
 		{
 			this.polynom_list.get(i).add(p.polynom_list.get(i));
 		}

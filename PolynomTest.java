@@ -6,8 +6,8 @@ public class PolynomTest {
 		//test1();
 		//test2();
 		//test3();
-		//test4();//polynom add test
-		test5();
+		test4();//polynom add test
+		//test5();
 
 	}
 	/**
@@ -15,35 +15,58 @@ public class PolynomTest {
 	 */
 	public static void test4() {
 		
-		String[] monoms = {"x^2+x","5x^3+2x^2+4"};
+		String[] googd = {"x^2+x","5x^3+2x^2+4"};
 		
 		Polynom p2 = new Polynom("x^2+x");
 
-		for (String string : monoms) {
+		//System.out.println(p2.toString());
+		for (String string : googd) {
 
 			//Polynom p = new Polynom("2x^2+4x+1");
 			//System.out.println(p2.toString());
-			// for (String string1 : monoms) {
-			// 	System.out.print(p2.toString()+" + ");
-
-			// 	//Polynom p1 = new Polynom(string1);
-			// 	//System.out.print(p1 +" = ");
-			// 	//p2.add(p1);
-			// 	System.out.println(p2.toString());
-			// }
+			for (String string1 : googd) 
+			{
+				System.out.print(p2.toString()+" +  ");
+				Polynom p1 = new Polynom(string1);
+				System.out.print(p1 +" = ");
+				try {
+					p2.add(p1);
+				System.out.println(p2.toString());
+				} catch (Exception e) {
+					System.out.println("faild to calculate");
+				}
+				
+			}
 		
 		}
 			
 	}
+	/**
+	 * tester for checking the normalecy of input
+	 */
 	public static void test1() {
-		Polynom p1 = new Polynom();
-		String[] monoms = {"1","x","x^2", "0.5x^2"};
-		//for(int i=0;i<monoms.length;i++) {
-		Monom m = new Monom(monoms[1]);
-		p1.add(m);
-		double aa = p1.area(0, 1, 0.0001);
-		p1.substract(p1);
-		System.out.println(p1);
+
+		String[] good_polynoms = {"2", "x", "x^3","x^2+1","4x+x^3+1"};
+		String[] bad_polynoms = {"(1)","x","x^2", "0.5x^2"};
+
+		for (String string : good_polynoms) 	
+		{
+			System.out.print(string + " => ");
+			try {
+				Polynom p1 = new Polynom(string);
+				System.out.println(p1.toString());
+			} 
+			catch (Exception e) 
+			{
+				System.out.println("wrong input");
+
+			}
+
+			
+
+		
+		}
+		
 	}
 	public static void test2() {
 		Polynom p1 = new Polynom(), p2 =  new Polynom();
