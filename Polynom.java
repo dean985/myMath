@@ -54,8 +54,7 @@ public class Polynom implements Polynom_able{
 		}
 		polynom_list.sort(comp);
 
-		int length = polynom_list.size()-1;
-		for (int i = 0; i < polynom_list.size() ; i++) {
+		for (int i = 0; i < polynom_list.size(); i++) {
 			if(polynom_list.get(i).isZero())
 					polynom_list.remove(i);
 			
@@ -100,7 +99,21 @@ public class Polynom implements Polynom_able{
 
 	@Override
 	public void multiply(Polynom_able p1) {
-		// TODO Auto-generated method stub
+		Polynom p = new Polynom(p1.toString());
+		Polynom res = new Polynom();
+		for (int i =0;i < this.polynom_list.size(); i++){
+			
+			for( int k =0; k<p.polynom_list.size();k++){
+				Monom temp = new Monom(this.polynom_list.get(i));
+				temp.multiply( p.polynom_list.get(k));
+				res.polynom_list.add(temp);
+
+			}
+		}
+		Polynom res2 = new Polynom(res.toString());		// we initialize to rearrange the result of multiplication
+		
+		this.polynom_list= res2.polynom_list;			// return value
+		
 		
 	}
 

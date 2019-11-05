@@ -8,9 +8,41 @@ public class PolynomTest {
 		//test3();
 		//test4();//polynom add test
 		//test5();
-		test6(); // test for method for polynom add(Monom m)
+		//test6(); // test for method for polynom add(Monom m)
+		test7();
 
 	}
+	
+	public static void test7() {
+		
+		String[] googd = {"x^2+x","5x^3+2x^2+4"};
+		
+		
+
+		//System.out.println(p2.toString());
+		for (String string : googd) {
+
+			//Polynom p = new Polynom("2x^2+4x+1");
+			//System.out.println(p2.toString());
+			for (String string1 : googd) 
+			{
+				Polynom p2 = new Polynom("x^2+x");
+				System.out.print("("+p2.toString()+") *  (");
+				Polynom p1 = new Polynom(string1);
+				System.out.print(p1 +") = ");
+				try {
+					p2.multiply(p1);
+				System.out.println(p2.toString());
+				} catch (Exception e) {
+					System.out.println("faild to calculate");
+				}
+				
+			}
+		
+		}
+			
+	}
+	
 	/**
 	 * test for add (monom m)
 	 */
