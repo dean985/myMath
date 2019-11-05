@@ -6,7 +6,8 @@ public class PolynomTest {
 		//test1();
 		//test2();
 		//test3();
-		test4();//polynom add test
+		//test4();//polynom add test
+		test5();
 
 	}
 	/**
@@ -71,4 +72,15 @@ public class PolynomTest {
 		//System.out.println(p1.polynom_list.get(0).toString());
 		//Polynom p = new Polynom();
 	}	
+	/**
+	 * Test for toString in polynom 
+	 * @param null
+	 * 
+	 */
+	public static void test5(){
+		//testing toString method for polynom
+		Polynom m = new Polynom("3x^3+2x^2+x+1");
+		System.out.println(m.toString());
+		
+	}
 }
