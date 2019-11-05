@@ -33,11 +33,12 @@ public class Polynom implements Polynom_able{
 	 */
 	public Polynom(String s) {
 		s = s.replaceAll("-","+-"); //excluding identical process of substraction
+		s = s.replaceAll(" ", "");// delete spaces
 		String[] poly = s.split("\\+");
 		for (String str:poly){
 			this.polynom_list.add(new Monom(str));
 		} 
-		//Collections.sort(polynom_list, new Monom_Comperator());		// sorted by power
+		Collections.sort(polynom_list, new Monom_Comperator());		// sorted by power
 	}
 	@Override
 	public double f(double x) {
