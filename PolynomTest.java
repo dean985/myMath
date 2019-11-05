@@ -3,16 +3,18 @@ package myMath;
 
 public class PolynomTest {
 	public static void main(String[] args) {
-		//test1();
+		test1();
 		//test2();
 		//test3();
-		test4();//polynom add test
+		//test4();//polynom add test
 		//test5();
 
 	}
+
 	/**
 	 * tester for the add(polynom_able) 
 	 */
+
 	public static void test4() {
 		
 		String[] googd = {"x^2+x","5x^3+2x^2+4"};
@@ -46,9 +48,14 @@ public class PolynomTest {
 	 */
 	public static void test1() {
 
-		String[] good_polynoms = {"2", "x", "x^3","x^2+1","4x+x^3+1"};
-		String[] bad_polynoms = {"(1)","x","x^2", "0.5x^2"};
+		String[] good_polynoms = {"2", "x", "x^3","x^2+x^2+1","4x+x^3+1","3x^2+1x+4x^2+4+2"};
+		String[] bad_polynoms = {"(1)","x+d^4","(x^2+x)+2", "0.5x^2"};
 
+		System.out.println("\t   test 1");
+		System.out.println("\t***************\n");
+
+		System.out.println("good input test");
+		System.out.println("====================");
 		for (String string : good_polynoms) 	
 		{
 			System.out.print(string + " => ");
@@ -61,10 +68,23 @@ public class PolynomTest {
 				System.out.println("wrong input");
 
 			}
+		}
 
-			
+		System.out.println("\nWrong input test");
+		System.out.println("====================");
 
-		
+		for (String string : bad_polynoms) 	
+		{
+			System.out.print(string + " => ");
+			try {
+				Polynom p1 = new Polynom(string);
+				System.out.println(p1.toString());
+			} 
+			catch (Exception e) 
+			{
+				System.out.println("wrong input");
+
+			}
 		}
 		
 	}

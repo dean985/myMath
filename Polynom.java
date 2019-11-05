@@ -41,8 +41,31 @@ public class Polynom implements Polynom_able{
 		} 
 		Monom_Comperator comp = new Monom_Comperator();
 		polynom_list.sort(comp);
-		//.sort(new compare(,));	// sorted by power
+
+		//adding similler monom
+		for (int i = 1; i < polynom_list.size(); i++)
+		{
+			
+			if(polynom_list.get(i).get_power() == polynom_list.get(i-1).get_power())
+			{
+				polynom_list.get(i-1).add(polynom_list.get(i));
+				polynom_list.set(i, new Monom(0, 0));
+			}
+		}
+		polynom_list.sort(comp);
+
+		int length = polynom_list.size()-1;
+		for (int i = 0; i < polynom_list.size() ; i++) {
+			if(polynom_list.get(i).isZero())
+					polynom_list.remove(i);
+			
+		}
+		//polynom_list.sort(comp);
+
+
+
 	}
+
 	@Override
 	public double f(double x) {
 		double res = 0;			
