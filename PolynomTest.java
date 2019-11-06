@@ -9,10 +9,29 @@ public class PolynomTest {
 		//test4();//polynom add test
 		//test5();
 		//test6(); // test for method for polynom add(Monom m)
-		test7();
+		//test7();
+		test8();
 
 	}
-	
+
+
+	/**
+	 * test for multiply monom
+	 */
+	public static void test8(){
+		Monom m1 = new Monom ("x^2");
+		Monom m2 = new Monom("4");
+		Monom m3 = new Monom("-1");
+		Polynom p = new Polynom("x^2+x+1");
+		Polynom p2 = new Polynom("x");
+		Monom[] arr = {m1,m2,m3};
+		// for (Monom monom : arr) {
+		// 	System.out.println(monom.toString() +"* "+p.toString()+" = "+  );
+		// }
+		p.substract(p2);
+		System.out.println(p.toString());
+		
+	}
 	public static void test7() {
 		
 		String[] googd = {"x^2+x","5x^3+2x^2+4"};

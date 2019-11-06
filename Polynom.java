@@ -93,7 +93,12 @@ public class Polynom implements Polynom_able{
 
 	@Override
 	public void substract(Polynom_able p1) {
-		// TODO Auto-generated method stub
+		Polynom p = new Polynom(p1.toString());
+		Monom m1 = new Monom ("-1");
+		p.multiply(m1);
+		this.add(p);
+		Polynom res = new Polynom(this.toString());
+		this.polynom_list = res.polynom_list;		// to eliminate Zeros (appears also at the last row of add (Poly) method)
 		
 	}
 
@@ -160,7 +165,9 @@ public class Polynom implements Polynom_able{
 	}
 	@Override
 	public void multiply(Monom m1) {
-		// TODO Auto-generated method stub
+		for(Monom m2: this.polynom_list){
+			m2.multiply(m1);
+		}
 		
 	}
 
