@@ -25,12 +25,13 @@ public class PolynomTest {
 		Monom m3 = new Monom("-1");
 		Polynom p = new Polynom("x^2+x+1");
 		Polynom p2 = new Polynom("x");
-		Polynom p3 = new Polynom("0x+2x-2x");
+		Polynom p3 = new Polynom("x");
 		
 		//System.out.println(p.toString()+" - "+p.isZero());
 		//System.out.println(p2.toString()+" - "+p2.isZero());
-		System.out.println(p3.toString()+" - "+ p3.isZero());
-		
+		//System.out.println(p3.toString()+" - "+ p3.isZero());
+		System.out.println(p.equals(p3));
+		System.out.println(p2.equals(p3));
 		
 	}
 	public static void test7() {

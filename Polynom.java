@@ -120,7 +120,14 @@ public class Polynom implements Polynom_able{
 
 	@Override
 	public boolean equals(Polynom_able p1) {
-		// TODO Auto-generated method stub
+	// Initialization of both polynoms, sorted and without zeros
+		Polynom k1 = new Polynom(p1.toString());
+		Polynom k2 = new Polynom(this.toString());
+
+		Polynom substraction = k2.substract(k1);
+		if (substraction == 0){
+			return true;
+		} 
 		return false;
 	}
 	/**
@@ -147,8 +154,7 @@ public class Polynom implements Polynom_able{
 
 	@Override
 	public Polynom_able copy() {
-		// TODO Auto-generated method stub
-		return null;
+		
 	}
 
 	@Override
