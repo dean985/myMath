@@ -154,13 +154,22 @@ public class Polynom implements Polynom_able{
 
 	@Override
 	public Polynom_able copy() {
-		
+		Polynom_able p = new Polynom();
+		for (int i =0; i< this.polynom_list.size();i++){
+			p.add(this.polynom_list.get(i));
+		}
+		return p;
+
 	}
 
 	@Override
 	public Polynom_able derivative() {
-		// TODO Auto-generated method stub
-		return null;
+		Polynom_able p = new Polynom();
+		for (int i =0; i<this.polynom_list.size(); i++){
+			Monom temp = this.polynom_list.get(i).derivative();
+			p.add(temp);
+		}
+		return p;
 	}
 
 	@Override
