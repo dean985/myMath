@@ -16,7 +16,8 @@ public class PolynomTest {
 
 
 	/**
-	 * test for multiply monom
+	 * general test - (dean)
+	 * several monoms and polynom ready to play with 
 	 */
 	public static void test8(){
 		Monom m1 = new Monom ("x^2");
@@ -24,12 +25,12 @@ public class PolynomTest {
 		Monom m3 = new Monom("-1");
 		Polynom p = new Polynom("x^2+x+1");
 		Polynom p2 = new Polynom("x");
-		Monom[] arr = {m1,m2,m3};
-		// for (Monom monom : arr) {
-		// 	System.out.println(monom.toString() +"* "+p.toString()+" = "+  );
-		// }
-		p.substract(p2);
-		System.out.println(p.toString());
+		Polynom p3 = new Polynom("0x+2x-2x");
+		
+		//System.out.println(p.toString()+" - "+p.isZero());
+		//System.out.println(p2.toString()+" - "+p2.isZero());
+		System.out.println(p3.toString()+" - "+ p3.isZero());
+		
 		
 	}
 	public static void test7() {

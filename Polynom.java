@@ -42,7 +42,7 @@ public class Polynom implements Polynom_able{
 		Monom_Comperator comp = new Monom_Comperator();
 		polynom_list.sort(comp);
 
-		//adding similler monom
+		//adding simillar monom
 		for (int i = 1; i < polynom_list.size(); i++)
 		{
 			
@@ -59,10 +59,6 @@ public class Polynom implements Polynom_able{
 					polynom_list.remove(i);
 			
 		}
-		//polynom_list.sort(comp);
-
-
-
 	}
 
 	@Override
@@ -127,12 +123,21 @@ public class Polynom implements Polynom_able{
 		// TODO Auto-generated method stub
 		return false;
 	}
-
+	/**
+	 * Method to check whether a polynom's value is zero
+	 */
 	@Override
 	public boolean isZero() {
-		// TODO Auto-generated method stub
-		return false;
+		Polynom p1 = new Polynom(this.toString());		// reordering the list of monoms and removing zeros
+	
+		for (int i = p1.polynom_list.size()-1 ; i>=0;i-- ){		
+			if (!p1.polynom_list.get(i).isZero()){				
+				return false;
+			}
+		}
+		return true;		
 	}
+		
 
 	@Override
 	public double root(double x0, double x1, double eps) {
