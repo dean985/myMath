@@ -127,9 +127,9 @@ public class Polynom implements Polynom_able{
 	// Initialization of both polynoms, sorted and without zeros
 		Polynom k1 = new Polynom(p1.toString());
 		Polynom k2 = new Polynom(this.toString());
-
-		Polynom substraction = k2.substract(k1);
-		if (substraction == 0){
+		k2.substract(k1);
+		Polynom_able substraction = k2.copy();
+		if (substraction.isZero()){
 			return true;
 		} 
 		return false;
@@ -156,6 +156,10 @@ public class Polynom implements Polynom_able{
 		return 0;
 	}
 
+	/**
+	 * 
+	 *  @@return the polynom_able
+	 */
 	@Override
 	public Polynom_able copy() {
 		Polynom_able p = new Polynom();

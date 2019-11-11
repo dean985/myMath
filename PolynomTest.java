@@ -12,10 +12,40 @@ public class PolynomTest {
 		//test6(); // test for method for polynom add(Monom m)
 		//test7();
 		//test8();
-		test9();
+		//test9();//subb function
+		test10();
 
 	}
+	
 
+/**
+ * tester for the equle()
+ */
+public static void test10(){
+	String[] googd = {"x^2+x","2","5x^3+2x^2+4"};
+	String[] seco = {"x^2+x"," 2","5x^3+2x^2+4"};
+
+	//Polynom m1 = new Polynom("2");
+
+	//System.out.println(p2.toString());
+	
+	for (int i = 0; i < seco.length; i++) {
+			Polynom p = new Polynom(googd[i]);
+			Polynom p2 = new Polynom(seco[i]);
+			System.out.println(p.equals(p2)+" ");
+	}
+		
+		
+	
+	
+}
+
+
+
+
+/**
+ * tester for the Subbstruct()
+ */
 	public static void test9(){
 		String[] googd = {"x^2+x","2","5x^3+2x^2+4"};
 		//String[] seco = {"x^2+x","2","5x^3+2x^2+4"};
