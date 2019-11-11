@@ -33,7 +33,7 @@ public class Polynom implements Polynom_able{
 	 * @param s: is a string represents a Polynom
 	 */
 	public Polynom(String s) {
-		s = s.replaceAll("-","+-"); //excluding identical process of substraction
+		//s = s.replaceAll("-","+-"); //excluding identical process of substraction
 		s = s.replaceAll(" ", "");// delete spaces
 		String[] poly = s.split("\\+");
 		for (String str:poly){
@@ -55,7 +55,11 @@ public class Polynom implements Polynom_able{
 		polynom_list.sort(comp);
 
 		for (int i = 0; i < polynom_list.size(); i++) {
-			if(polynom_list.get(i).isZero())
+			if(polynom_list.get(i).isZero() && i == polynom_list.size()-1)
+			{
+				break;
+			}
+			if(polynom_list.get(i).isZero() || polynom_list.get(i).get_coefficient()==0)
 					polynom_list.remove(i);
 			
 		}
@@ -77,7 +81,7 @@ public class Polynom implements Polynom_able{
 		Polynom p = new Polynom(p1.toString());
 		this.polynom_list.addAll(p.polynom_list);
 		Polynom res = new Polynom(this.toString());
-		this.polynom_list= res.polynom_list;	
+		this.polynom_list = res.polynom_list;	
 	}
 
 	@Override
@@ -88,14 +92,14 @@ public class Polynom implements Polynom_able{
 	}
 
 	@Override
-	public void substract(Polynom_able p1) {
+	public void substract(Polynom_able p1) 
+	{
 		Polynom p = new Polynom(p1.toString());
 		Monom m1 = new Monom ("-1");
 		p.multiply(m1);
 		this.add(p);
 		Polynom res = new Polynom(this.toString());
 		this.polynom_list = res.polynom_list;		// to eliminate Zeros (appears also at the last row of add (Poly) method)
-		
 	}
 
 	@Override
@@ -181,7 +185,7 @@ public class Polynom implements Polynom_able{
 	@Override
 	public Iterator<Monom> iteretor() {
 		// TODO Auto-generated method stub
-		return null;
+		return this.polynom_list.iterator();
 	}
 	@Override
 	public void multiply(Monom m1) {
@@ -196,11 +200,13 @@ public class Polynom implements Polynom_able{
 		String str="";
 		int length = this.polynom_list.size();		// size of arraylist of monoms
 		for(int i = 0; i< length-1 ; i++){
+
 			
 				str += this.polynom_list.get(i).toString() + " + ";
 						
 		}
 		str += this.polynom_list.get(length-1).toString();
+		
 		return str;
 	}
 	

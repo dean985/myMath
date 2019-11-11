@@ -2,7 +2,8 @@ package myMath;
 
 
 public class PolynomTest {
-	public static void main(String[] args) {
+	public static void main(String[] args)
+	{
 		//test1();
 		//test2();
 		//test3();
@@ -10,10 +11,39 @@ public class PolynomTest {
 		//test5();
 		//test6(); // test for method for polynom add(Monom m)
 		//test7();
-		test8();
+		//test8();
+		test9();
 
 	}
 
+	public static void test9(){
+		String[] googd = {"x^2+x","2","5x^3+2x^2+4"};
+		//String[] seco = {"x^2+x","2","5x^3+2x^2+4"};
+
+		//Polynom m1 = new Polynom("2");
+
+		//System.out.println(p2.toString());
+		for (String string : googd) {
+
+			Polynom p = new Polynom(string);
+			//System.out.println(p2.toString());
+			for (String string1 : googd) 
+			{
+				Polynom p1 = new Polynom(string1);
+
+				System.out.print(p1.toString()+" -  ");
+				System.out.print(p.toString() +" = ");
+				try {
+					p1.substract(p);
+				System.out.println(p1.toString());
+				} catch (Exception e) {
+					System.out.println("faild to calculate");
+				}
+				
+			}
+		
+		}
+	}
 
 	/**
 	 * general test - (dean)
@@ -100,9 +130,9 @@ public class PolynomTest {
 
 	public static void test4() {
 		
-		String[] googd = {"x^2+x","5x^3+2x^2+4"};
+		String[] googd = {"2","5x^3+2x^2+4"};
 		
-		Polynom p2 = new Polynom("x^2+x");
+		Polynom p2 = new Polynom("-2");
 
 		//System.out.println(p2.toString());
 		for (String string : googd) {
@@ -115,8 +145,8 @@ public class PolynomTest {
 				Polynom p1 = new Polynom(string1);
 				System.out.print(p1 +" = ");
 				try {
-					p2.add(p1);
-				System.out.println(p2.toString());
+					p1.add(p2);
+				System.out.println(p1.toString());
 				} catch (Exception e) {
 					System.out.println("faild to calculate");
 				}
@@ -131,7 +161,7 @@ public class PolynomTest {
 	 */
 	public static void test1() {
 
-		String[] good_polynoms = {"2", "x", "x^3","x^2+x^2+1","4x+x^3+1","3x^2+1x+4x^2+4+2"};
+		String[] good_polynoms = {"2 - 2", "x", "x^3","x^2-x^2+1","4x+x^3+1","3x^2+1x+4x^2+4+2"};
 		String[] bad_polynoms = {"(1)","x+d^4","(x^2+x)+2", "0.5x^2"};
 
 		System.out.println("\t   test 1");
