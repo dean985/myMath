@@ -2,11 +2,20 @@
 ## Java library working with polynomial.
 
   the library contain the classes `Monom`,`Polynom`.
+
   the interface `Polynom_able`
+
   and the testers `Monomtest`, `Polynomtest`.
 
 ### Monom class:
 
+#### Constructors:
+
+1) `Polynom()` - Creates zearo monom which defined as "0x^0".
+
+2) `Polynom(String s)` - Creates polynomial from String. F.E. s = "x^2+2x+3"
+
+#### Methods:
 
 ### Polynom class:
 
