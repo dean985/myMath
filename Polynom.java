@@ -146,12 +146,43 @@ public class Polynom implements Polynom_able{
 	}
 		
 
+	/**
+	 * @param x0,x1 - An interval in the domain of Polynom P , eps - being a constant small number (defined)
+	 * @return double x - The point where p(x)=0 
+	 * Return the root of the polynom for a given interval
+	 */
 	@Override
 	public double root(double x0, double x1, double eps) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
+		// assuming (f(x0)*f(x1)<=0, returns f(x2) such that:
+		//	(i) x0<=x2<=x1 & (ii) {f(x2)<eps
+			if (x0 > x1){
+				throw new RuntimeException("Invalid input for polynom "+this.toString()+" , Check that x0<x1 ");
+			}
+			if (this.f(x0)*this.f(x1)>0  && this.f(x0) != this.f(x1) ){ 		//latter argument is because of the private case- constant monom
+				throw new RuntimeException("For polynom "+this.toString()+" , Check that f(x0)*f(x1)<=0 ");
+			}
+			
+			// BS for a root
+			double mid = (x1+x0)/2;
+			while ((x1-x0) >=eps ){
+				mid = (x1+x0)/2;
+				if (this.f(mid) == 0){
+					break;
+				}
+				else if (this.f(mid)* this.f(x0) < 0){
+					x1 = mid;
+				}
+				else {
+					x0 = mid;
+				}
+			}
+			if (this.f(mid) <=eps ){
+				return mid;
+			}
+			//In case there are no roots, return max value
+			return Double.MAX_VALUE;
+		}
+	
 	@Override
 	public Polynom_able copy() {
 		Polynom_able p = new Polynom();
@@ -174,7 +205,7 @@ public class Polynom implements Polynom_able{
 
 	@Override
 	public double area(double x0, double x1, double eps) {
-		// TODO Auto-generated method stub
+		
 		return 0;
 	}
 

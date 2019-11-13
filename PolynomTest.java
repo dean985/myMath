@@ -10,11 +10,37 @@ public class PolynomTest {
 		//test5();
 		//test6(); // test for method for polynom add(Monom m)
 		//test7();
-		test8();
-
+		//test8();
+		test9();
+		
 	}
 
+	/**
+	 * Test for method root
+	 */
+	public static void test9(){
+		String[] arr = {"-x^3+x^2+x+4","x^2+2x-1", "x^5-x","x^5-x+1","-x^6+3x+100","x+5","5"};
+		int low = 10;
+		int high = -10;
+		
+		for(String s: arr){
+			Polynom p = new Polynom(s);
+			try {
+				if( p.root(low, high, Monom.EPSILON) == Double.MAX_VALUE ){
+					System.out.println("("+ p.toString()+")  ------no roots in interval");
+					System.out.println();
+				}
+				else{
+					System.out.println("("+ p.toString()+")"+ "       Root: "+ p.root(low, high, Monom.EPSILON));
+				}
+			}
+			catch (Exception e ){
+				System.out.println("("+ p.toString()+")"+" "+ e.getMessage());
+				continue;
+			}
+		}
 
+	}
 	/**
 	 * general test - (dean)
 	 * several monoms and polynom ready to play with 
@@ -30,9 +56,13 @@ public class PolynomTest {
 		//System.out.println(p.toString()+" - "+p.isZero());
 		//System.out.println(p2.toString()+" - "+p2.isZero());
 		//System.out.println(p3.toString()+" - "+ p3.isZero());
-		Polynom_able p55 = p3.derivative();
-		System.out.println(p55.toString());
+		//Polynom_able p55 = p3.derivative();
+		//System.out.println(p55.toString());
 		//System.out.println(p2.equals(p3));
+		Polynom pp = new Polynom("x^2+-x^2+1");
+		Polynom pp1 = new Polynom("x^2-x^2+1");
+		System.out.println(pp.toString());
+		System.out.println(pp1.toString());
 		
 	}
 	public static void test7() {
