@@ -46,7 +46,8 @@ public class Polynom implements Polynom_able{
 	 */
 	public Polynom(String s) {
 
-		//s = s.replaceAll("-","+-"); //excluding identical process of substraction
+		if(!s.contains("+-"))
+			s = s.replaceAll("-","+-"); //excluding identical process of substraction
 		s = s.replaceAll(" ", "");// delete spaces
 		String[] poly = s.split("\\+");
 		for (String str:poly){
