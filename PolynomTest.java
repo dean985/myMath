@@ -2,7 +2,8 @@ package myMath;
 
 
 public class PolynomTest {
-	public static void main(String[] args) {
+	public static void main(String[] args)
+	{
 		//test1();
 		//test2();
 		//test3();
@@ -11,40 +12,119 @@ public class PolynomTest {
 		//test6(); // test for method for polynom add(Monom m)
 		//test7();
 		//test8();
-		test9();
-		
-	}
+		//test9();//subb function
+		//test10();
+		//test11();
+		test12();
 
-	/**
-	 * Test for method root
-	 */
-	public static void test9(){
-		String[] arr = {"-x^3+x^2+x+4","x^2+2x-1", "x^5-x","x^5-x+1","-x^6+3x+100","x+5","5"};
-		int low = 10;
-		int high = -10;
-		
-		for(String s: arr){
-			Polynom p = new Polynom(s);
-			try {
-				if( p.root(low, high, Monom.EPSILON) == Double.MAX_VALUE ){
-					System.out.println("("+ p.toString()+")  ------no roots in interval");
-					System.out.println();
-				}
-				else{
-					System.out.println("("+ p.toString()+")"+ "       Root: "+ p.root(low, high, Monom.EPSILON));
-				}
+	}
+	
+/**
+ * Test for method root
+ */
+public static void test12(){
+	String[] arr = {"-x^3+x^2+x+4","x^2+2x-1", "x^5-x","x^5-x+1","-x^6+3x+100","x+5","5"};
+	int low = 10;
+	int high = -10;
+	
+	for(String s: arr){
+		Polynom p = new Polynom(s);
+		try {
+			if( p.root(low, high, Monom.EPSILON) == Double.MAX_VALUE ){
+				System.out.println("("+ p.toString()+")  ------no roots in interval");
+				System.out.println();
 			}
-			catch (Exception e ){
-				System.out.println("("+ p.toString()+")"+" "+ e.getMessage());
-				continue;
+			else{
+				System.out.println("("+ p.toString()+")"+ "       Root: "+ p.root(low, high, Monom.EPSILON));
 			}
 		}
-
+		catch (Exception e ){
+			System.out.println("("+ p.toString()+")"+" "+ e.getMessage());
+			continue;
+		}
 	}
+	
+
+}
+
 	/**
-	 * general test - (dean)
-	 * several monoms and polynom ready to play with 
+	 * tester for the area
 	 */
+	public static void test11(){
+		String[] googd = {"x^2","x","5x^3+2x^2+4"};	
+		double[] ans = {1000/3,50,39620/3};	
+		//Polynom m1 = new Polynom("2");
+	
+		//System.out.println(p2.toString());
+		int i = 0;
+		for (String string : googd) {
+			
+			Polynom p = new Polynom(string);
+
+					System.out.println(p.toString() +" => " + p.area(0, 10, Monom.EPSILON) + " the right ans: "+ ans[i]);
+			i++;
+		}
+		
+	}
+
+
+/**
+ * tester for the equle()
+ */
+public static void test10(){
+	String[] googd = {"x^2+x","2","5x^3+2x^2+4"};
+	String[] seco = {"x^2+x"," 2","5x^3+2x^2+4"};
+
+	//Polynom m1 = new Polynom("2");
+
+	//System.out.println(p2.toString());
+	
+	for (int i = 0; i < seco.length; i++) {
+			Polynom p = new Polynom(googd[i]);
+			Polynom p2 = new Polynom(seco[i]);
+			System.out.println(p.equals(p2)+" ");
+	}
+	
+}
+
+
+
+
+/**
+ * tester for the Subbstruct()
+ */
+	public static void test9(){
+		String[] googd = {"x^2+x","2","5x^3+2x^2+4"};
+		//String[] seco = {"x^2+x","2","5x^3+2x^2+4"};
+		//Polynom m1 = new Polynom("2");
+
+		//System.out.println(p2.toString());
+		for (String string : googd) {
+
+			Polynom p = new Polynom(string);
+			//System.out.println(p2.toString());
+			for (String string1 : googd) 
+			{
+				Polynom p1 = new Polynom(string1);
+
+				System.out.print(p1.toString()+" -  ");
+				System.out.print(p.toString() +" = ");
+				try {
+					p1.substract(p);
+				System.out.println(p1.toString());
+				} catch (Exception e) {
+					System.out.println("faild to calculate");
+				}
+				
+			}
+		
+		}
+	}
+
+/**
+ * general test - (dean)
+ * several monoms and polynom ready to play with 
+ */
 	public static void test8(){
 		Monom m1 = new Monom ("x^2");
 		Monom m2 = new Monom("4");
@@ -130,9 +210,9 @@ public class PolynomTest {
 
 	public static void test4() {
 		
-		String[] googd = {"x^2+x","5x^3+2x^2+4"};
+		String[] googd = {"2","5x^3+2x^2+4"};
 		
-		Polynom p2 = new Polynom("x^2+x");
+		Polynom p2 = new Polynom("-2");
 
 		//System.out.println(p2.toString());
 		for (String string : googd) {
@@ -145,8 +225,8 @@ public class PolynomTest {
 				Polynom p1 = new Polynom(string1);
 				System.out.print(p1 +" = ");
 				try {
-					p2.add(p1);
-				System.out.println(p2.toString());
+					p1.add(p2);
+				System.out.println(p1.toString());
 				} catch (Exception e) {
 					System.out.println("faild to calculate");
 				}
@@ -161,7 +241,7 @@ public class PolynomTest {
 	 */
 	public static void test1() {
 
-		String[] good_polynoms = {"2", "x", "x^3","x^2+x^2+1","4x+x^3+1","3x^2+1x+4x^2+4+2"};
+		String[] good_polynoms = {"2 - 2", "x", "x^3","x^2-x^2+1","4x+x^3+1","3x^2+1x+4x^2+4+2"};
 		String[] bad_polynoms = {"(1)","x+d^4","(x^2+x)+2", "0.5x^2"};
 
 		System.out.println("\t   test 1");

@@ -15,71 +15,37 @@ public class Monom implements function{
 	public static final Monom MINUS1 = new Monom(-1,0);
 	public static final double EPSILON = 0.0000001;
 	
+	////////////////////////////////////////////
+    //////////////    fields     ///////////////
+    ////////////////////////////////////////////
+
 	private double _coefficient; 
 	private int _power;
 	public static final Comparator<Monom> _Comp = new Monom_Comperator();
 
-	private static Monom getNewZeroMonom() {
-		return new Monom(ZERO);
-	}
-	public static Comparator<Monom> getComp() {
-		return _Comp;
-	}
-	private void set_coefficient(double a){
-		this._coefficient = a;
-	}
-	private void set_power(int p) {
-		if(p<0) {throw new RuntimeException("ERR the power of Monom should not be negative, got: "+p);}
-		this._power = p;
-		
-	}
 
-	
-	
+
+
+
+    /////////////////////////////////////////////////////////////////
+    ///////////////////     Constructor     /////////////////////////
+    /////////////////////////////////////////////////////////////////
+
+	/**
+	 * constructor for monom
+	 * @param a - coefficient
+	 * @param b - power
+	 */
 	public Monom(double a, int b){
 		this.set_coefficient(a);
 		this.set_power(b);
 	}
+
 	public Monom(Monom ot) {
 		this(ot.get_coefficient(), ot.get_power());
 	}
-	
-	public double get_coefficient() {
-		return this._coefficient;
-	}
-	public int get_power() {
-		return this._power;
-	}
-	/** 
-	 * this method returns the derivative monom of this.
-	 * @return
-	 */
-	public Monom derivative() {
-		if(this.get_power()==0) {
-			return getNewZeroMonom();
-		}
-		return new Monom(this.get_coefficient()*this.get_power(), this.get_power()-1);
-	}
-	/**
-	 * Return the value of the monom at a specific value of x
-	 * @param x
-	 * @return result (double)
-	 */
-	public double f(double x) {
-		double ans=0;
-		double p = this.get_power();
-		ans = this.get_coefficient()*Math.pow(x, p);
-		return ans;
-	} 
-	
-	public boolean isZero() {
-		boolean iszero = this.get_coefficient() == 0;
-		if(iszero)
-			this.set_power(0);
-		return iszero;
-	}
-	// ***************** add your code below **********************
-	/**
+
+		/**
 	 * A method to proccess human readable version of monom (represented as a String)
 	 * to an instance of the monom object.
 	 * @param s
@@ -120,6 +86,65 @@ public class Monom implements function{
 		}
 		
 	}
+
+
+
+    ///////////////////////////////////////////////////////////////////////////
+    ////////////////////////////       methods        /////////////////////////
+    ///////////////////////////////////////////////////////////////////////////
+
+
+	/**
+	 * the function return a monom with zero value
+	 * @return Monom(Zero)
+	 */
+	private static Monom getNewZeroMonom() {return new Monom(ZERO);}
+
+	public double get_coefficient() {return this._coefficient;}
+
+	public int get_power() {return this._power;}
+
+	public static Comparator<Monom> getComp() {return _Comp;}
+
+
+	private void set_coefficient(double a){this._coefficient = a;}
+
+	private void set_power(int p) {
+		if(p<0) {throw new RuntimeException("ERR the power of Monom should not be negative, got: "+p);}
+		this._power = p;
+	}
+
+	
+
+	/** 
+	 * this method returns the derivative monom of this.
+	 * @return derivative form of the monom
+	 */
+	public Monom derivative() {
+		if(this.get_power()==0) {
+			return getNewZeroMonom();
+		}
+		return new Monom(this.get_coefficient()*this.get_power(), this.get_power()-1);
+	}
+	/**
+	 * Return the value of the monom at a specific value of x
+	 * @param x
+	 * @return result (double)
+	 */
+	public double f(double x) {
+		double ans=0;
+		double p = this.get_power();
+		ans = this.get_coefficient()*Math.pow(x, p);
+		return ans;
+	} 
+	
+	public boolean isZero() {
+		boolean iszero = this.get_coefficient() == 0;
+		if(iszero)
+			this.set_power(0);
+		return iszero;
+	}
+
 	/**
 	 * A method to determine whether two monoms are equal
 	 * The coefficient comparison is being applies using EPSILON. Two coefficients are considered equal
@@ -141,21 +166,6 @@ public class Monom implements function{
 		return false;
 		
 	}
-	public static void main(String[] args) {
-		String s = "5x^3";
-		Monom m = new Monom (s);
-		//System.out.println(m.get_coefficient());
-		//System.out.println(m.derivative());
-		Monom m1 = new Monom(-3, -2);
-		m1.multipy(m);
-		System.out.println(m1.toString());
-	}
-		
-		//* check s legth above 1 char
-		//* check if the s contain X else take the stirng and pare_duble
-		//  and put pow <= 0
-		//* run on string and get the coeff till you reach the x
-	   //  get ^ index in the s and put the next chars in pow
 		
 	/**
 	 * add the recived monom to the current monom
@@ -187,7 +197,7 @@ public class Monom implements function{
 	
 	/**
 	 * Multiply two monoms. coefficient and power are being multiplied seperatly.
-	 * @param d
+	 * @param d - monom to multiply
 	 */
 	public void multiply(Monom d) {
 		// initial test if one of the is monom zero
@@ -201,9 +211,10 @@ public class Monom implements function{
 		this.set_coefficient(coeff);
 		
 		//Power 
-			int pow = this.get_power() + d.get_power();
-			this.set_power(pow);
+		int pow = this.get_power() + d.get_power();
+		this.set_power(pow);
 	}
+	
 	/**
 	 * Creates a human-readable string of a monom.
 	 * @return String representation of monom
@@ -217,7 +228,6 @@ public class Monom implements function{
 		
 		return ans;
 	}
-	// you may (always) add other methods.
 
 	//****************** Private Methods and Data *****************
 	
