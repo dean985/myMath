@@ -13,12 +13,24 @@ import myMath.Monom;
  * 2. Finding a numerical value between two values (currently support root only f(x)=0).
  * 3. Derivative
  * 
- * @author Boaz
+ * @author Dean and Elon (c)
  *
+ * 
  */
 public class Polynom implements Polynom_able{
 	
+
+	////////////////////////////////////////////
+    //////////////    fields     ///////////////
+	////////////////////////////////////////////
+	
 	ArrayList<Monom> polynom_list = new ArrayList<Monom>();
+	
+
+	
+    /////////////////////////////////////////////////////////////////
+    ///////////////////     Constructor     /////////////////////////
+	/////////////////////////////////////////////////////////////////
 	
 	/**
 	 * Zero (empty polynom_list)
@@ -33,6 +45,7 @@ public class Polynom implements Polynom_able{
 	 * @param s: is a string represents a Polynom
 	 */
 	public Polynom(String s) {
+
 		//s = s.replaceAll("-","+-"); //excluding identical process of substraction
 		s = s.replaceAll(" ", "");// delete spaces
 		String[] poly = s.split("\\+");
@@ -65,6 +78,13 @@ public class Polynom implements Polynom_able{
 		}
 	}
 
+
+	///////////////////////////////////////////////////////////////////////////
+    ////////////////////////////       methods        /////////////////////////
+    ///////////////////////////////////////////////////////////////////////////
+
+
+
 	@Override
 	public double f(double x) {
 		double res = 0;			
@@ -74,6 +94,8 @@ public class Polynom implements Polynom_able{
 		return res;
 
 	}
+
+
 
 	@Override
 	public void add(Polynom_able p1) {
@@ -182,8 +204,18 @@ public class Polynom implements Polynom_able{
 
 	@Override
 	public double area(double x0, double x1, double eps) {
-		// TODO Auto-generated method stub
-		return 0;
+		final int n = 10;
+		double dx = (x1 -x0)/n;
+		double sum = 0;
+
+		while(x0<x1)
+		{
+			sum += f(x0)*eps;
+			x0 += eps;
+			//sum += this.f( )*dx;
+		}
+
+		return sum;
 	}
 
 	@Override

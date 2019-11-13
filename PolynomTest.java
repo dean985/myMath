@@ -13,10 +13,31 @@ public class PolynomTest {
 		//test7();
 		//test8();
 		//test9();//subb function
-		test10();
+		//test10();
+		test11();
 
 	}
 	
+	/**
+	 * tester for the area
+	 */
+	public static void test11(){
+		String[] googd = {"x^2","x","5x^3+2x^2+4"};	
+		double[] ans = {1000/3,50,39620/3};	
+		//Polynom m1 = new Polynom("2");
+	
+		//System.out.println(p2.toString());
+		int i = 0;
+		for (String string : googd) {
+			
+			Polynom p = new Polynom(string);
+
+					System.out.println(p.toString() +" => " + p.area(0, 10, Monom.EPSILON) + " the right ans: "+ ans[i]);
+			i++;
+		}
+		
+	}
+
 
 /**
  * tester for the equle()
@@ -34,9 +55,6 @@ public static void test10(){
 			Polynom p2 = new Polynom(seco[i]);
 			System.out.println(p.equals(p2)+" ");
 	}
-		
-		
-	
 	
 }
 
