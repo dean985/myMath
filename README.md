@@ -1,59 +1,49 @@
 # polynom
-## Very simple Java library working with polynomial.
-Thank effusively to [@phillveber](https://github.com/phillveber) for help with testing.
+## Java library working with polynomial.
 
-### Usage
+  the library contain the classes `Monom`,`Polynom`.
+  the interface `Polynom_able`
+  and the testers `Monomtest`, `Polynomtest`.
 
-For detailed description and examples see Main.java
+### Monom class:
+
+
+### Polynom class:
 
 #### Constructors:
 
-1) `Polynom()` - Creates "x^0" polynomial, which is exactly "1.0".
+1) `Polynom()` - Creates zearo monom which defined as "0x^0".
 
-2) `Polynom(int[] coefficients)`, `Polynom(double[] coefficients)` - You can send an array of coefficients to constructor.
-
-3) `Polynom(a, deg)` - Creates a*x^deg polynomial.
-
-4) `Polynom(String s)` - Creates polynomial from String. F.e. s = "x^2+2x+3"
+2) `Polynom(String s)` - Creates polynomial from String. F.E. s = "x^2+2x+3"
 
 #### Methods:
 
-1) `double[] getCoeffs()` - Will return array of double[] with coefficients of polynomial.
+1) `double f(double x)` - return the y valu of the polynom for given x value.
 
-2) `int degree()` - Will return the degree of polynomial.
+2) `void add(Polynom_able p1)` - add the given polynom to the current polynom object, the answer get it to the currnt polynom object.
 
-3) `boolean isConst()` - Check if polynomial degree is 0
+3) `void add(Monom m1)` - add the given Monom to the current polynom.
 
-4) `boolean equals(Polynom p)` - Compare two polynomial
+4) `void substract(Polynom_able p1)` - substract the given polynom_able with the current polynom the answer it put in the current polynom object.
 
-5) `boolean equals(double a)` - Compare polynomial to double number
+5) `void multiply(Polynom_able p1)` - multiply the given object polynom_able with the current polynom the answer get in to the current polynom object
 
-6) `Polynom add(Polynom p)` - Addition
+6) `boolean equals(Polynom_able p1)` - return true when the current polynom object is equle to the the given polynom_able object else return false.
 
-7) `Polynom subtract(Polynom p)` - Subtraction
+7) `boolean isZero()` - return true when the polynom is zero which mean it contain zero Monom.
 
-8) `Polynom multiply(Polynom p)` - Multiplication
+8) `double root(double x0, double x1, double eps)` - 
 
-9) `Polynom[] mod(Polynom p)` - Modulo operation
+9) `Polynom_able copy()` - 
 
-10) `Polynom power(int a)` - Exponentiation
+10) `Polynom_able derivative()` -
 
-11) `Polynom differentiate()` - First derivative
+11) `double area(double x0, double x1, double eps)` -
 
-12) `Polynom differentiate(int n)` - n'th derivative
+12) `Iterator<Monom> iteretor()` -
 
-13) `int sign(double x)` - Signum
+13) `void multiply(Monom m1)` -
 
-14) `double valueOf(double x)` - value of polynomial at x
+14) `String toString()` - 
 
-15) `double[] valueOf(double[] xs)` - array of values of polynomial at each x of array xs
 
-16) `double[] solve()` - All real roots of polynomial
-
-17) `double[] solve(double a)` - All real roots with manual set accuracy
-
-18) `Polynom gcd(Polynom p)` - Greatest common divisor of two polynomial
-
-19) `Polynom antiderivative(double c)` - Will return antiderivative polynomial with given `c`. Calling without `c` will return antiderivative with `c = 0`
-
-20) `double integrate(double a, double b)` - Deifinite integrating from `a` to `b`
