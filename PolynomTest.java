@@ -12,7 +12,7 @@ public class PolynomTest {
 		//test6(); // test for method for polynom add(Monom m)
 		//test7();
 		//test8();
-		//test9();//subb function
+		test9();//subb function
 		//test10();
 		//test11();
 		//test12();
@@ -53,6 +53,7 @@ public static void test12(){
 	public static void test11(){
 		String[] googd = {"x^2","x","5x^3+2x^2+4"};	
 		double[] ans = {1000/3,50,39620/3};	
+		
 		//Polynom m1 = new Polynom("2");
 	
 		//System.out.println(p2.toString());
@@ -113,7 +114,7 @@ public static void test10(){
 					p1.substract(p);
 				System.out.println(p1.toString());
 				} catch (Exception e) {
-					System.out.println("faild to calculate");
+					System.out.println("faild to calculate error log: "+ e.getLocalizedMessage()+"  "+e.getMessage());
 				}
 				
 			}
@@ -241,7 +242,7 @@ public static void test10(){
 	 */
 	public static void test1() {
 
-		String[] good_polynoms = {"2 - 2", "x", "x^3","x^2-x^2+1","4x+x^3+1","3x^2+1x+4x^2+4+2"};
+		String[] good_polynoms = {"2 - 2", "5-x", "x^3","x^2-x^2+1","4x+x^3+1","3x^2+1x+4x^2+4+2"};
 		String[] bad_polynoms = {"(1)","x+d^4","(x^2+x)+2", "0.5x^2"};
 
 		System.out.println("\t   test 1");

@@ -138,6 +138,11 @@ public class Monom implements function{
 		return ans;
 	} 
 	
+
+	/**
+	 * 
+	 * @return if the coeffcient == 0 then return true and set power to 0
+	 */
 	public boolean isZero() {
 		boolean iszero = this.get_coefficient() == 0;
 		if(iszero)
