@@ -1,7 +1,4 @@
 package myMath;
-import java.beans.Transient;
-
-
 
 public class PolynomTest {
 	public static void main(String[] args)
