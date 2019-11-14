@@ -4,7 +4,7 @@ package myMath;
 public class PolynomTest {
 	public static void main(String[] args)
 	{
-		test1();
+		//test1();
 		//test2();
 		//test3();
 		//test4();//polynom add test
@@ -14,7 +14,7 @@ public class PolynomTest {
 		//test8();
 		//test9();//subb function
 		//test10();
-		//test11();
+		test11();
 		//test12();
 
 	}
