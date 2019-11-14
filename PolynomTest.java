@@ -1,4 +1,6 @@
 package myMath;
+import java.beans.Transient;
+
 
 
 public class PolynomTest {
@@ -14,7 +16,7 @@ public class PolynomTest {
 		//test8();
 		test9();//subb function
 		//test10();
-		test11();
+		//test11();
 		//test12();
 
 	}
@@ -22,6 +24,7 @@ public class PolynomTest {
 /**
  * Test for method root
  */
+@Test 
 public static void test12(){
 	String[] arr = {"-x^3+x^2+x+4","x^2+2x-1", "x^5-x","x^5-x+1","-x^6+3x+100","x+5","5"};
 	int low = 10;

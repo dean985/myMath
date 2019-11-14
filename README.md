@@ -11,17 +11,35 @@
 
 #### Constructors:
 
-1) `Monom(double a, int b)` - Creates Monom with.
+1) `Monom(double a, int b)` - Creates Monom with coefficent .
 
-2) `Polynom(String s)` - Creates polynomial from String. F.E. s = "x^2+2x+3"
+2) `Monom(String s)` - Creates polynomial from String. F.E. s = "6x^2"
 
 #### Methods:
 
-1) `` - 
-2) `` - 
-3) `` - 
+1) `Monom getNewZeroMonom()` - the function return a monom with zero value
+2) `double get_coefficient()` - the function return a double value of the coefficient
+3) `int get_power()` - the function return a int value of the power
 
+4) `Comparator<Monom> getComp()` - comperator function, return the comperator value from the comperator class.
 
+5) `void set_coefficient(double a)` - set the _coefficient in the monom with the given value a.
+
+6) `void set_power(int p)` - set the _power in the monom with the given value p.
+
+7) `Monom derivative()` - this method returns the derivative monom of this.
+
+8) `double f(double x)` - Return the value of the monom at a specific value of x
+
+9) `boolean isZero()` - return if the coeffcient == 0 then return true and set power to 0
+
+10) `boolean equals(Monom m)` -   A method to determine whether two monoms are equal The coefficient comparison is being applies using EPSILON. Two coefficients are considered equal when their difference is less or equal to EPSILON
+
+11) `void add(Monom m)` - add the recived monom to the current monom if the power is diffrent throw exaption
+
+12) `void multiply(Monom d)` - Multiply two monoms. coefficient and power are being multiplied seperatly.
+
+13) `String toString()` - Creates a human-readable string of a monom.
 
 
 
