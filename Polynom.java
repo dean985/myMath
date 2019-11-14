@@ -39,16 +39,16 @@ public class Polynom implements Polynom_able {
 	}
 
 	/**
-	 * init a Polynom from a String such as: {"x", "3+1.4X^3-34x",
-	 * "(2x^2-4)*(-1.2x-7.1)", "(3-3.4x+1)*((3.1x-1.2)-(3X^2-3.1))"};
+	 * init a Polynom from a String such as: {"x", "3+1.4X^3-34x","3","2x^4"};
 	 * 
 	 * @param s: is a string represents a Polynom
 	 */
 	public Polynom(String s) {
 
-		s = s.replaceAll(" - ", "+-"); // excluding identical process of substraction
-
 		s = s.replaceAll(" ", "");// delete spaces
+		if (!s.contains("+-"))
+			s = s.replaceAll("-", "+-"); // excluding identical process of substraction
+
 		String[] poly = s.split("\\+");
 		for (String str : poly) {
 			this.polynom_list.add(new Monom(str));
@@ -66,10 +66,17 @@ public class Polynom implements Polynom_able {
 		}
 		polynom_list.sort(comp);
 
+		// delete the zeroz monom
+
+		if(polynom_list.size()>1)
 		for (int i = 0; i < polynom_list.size(); i++) {
-			if (polynom_list.get(i).isZero() && i == polynom_list.size() - 1) {
+			if (polynom_list.get(i).isZero() && i == polynom_list.size()) {
 				break;
 			}
+			// if (i == polynom_list.size())
+			// if(!polynom_list.get(polynom_list.size() - 1).isZero() &&
+			// polynom_list.get(polynom_list.size()).isZero())
+			// polynom_list.remove(i);
 			if (polynom_list.get(i).isZero() || polynom_list.get(i).get_coefficient() == 0)
 				polynom_list.remove(i);
 
@@ -113,7 +120,7 @@ public class Polynom implements Polynom_able {
 		p.multiply(m1);
 		this.add(p);
 		Polynom res = new Polynom(this.toString());
-		this.polynom_list = res.polynom_list; // to eliminate Zeros (appears also at the last row of add (Poly) method)
+		this.polynom_list = res.polynom_list;	
 	}
 
 	@Override
@@ -132,7 +139,6 @@ public class Polynom implements Polynom_able {
 		Polynom res2 = new Polynom(res.toString()); // we initialize to rearrange the result of multiplication
 
 		this.polynom_list = res2.polynom_list; // return value
-
 	}
 
 	@Override
@@ -201,6 +207,7 @@ public class Polynom implements Polynom_able {
 	}
 
 	/**
+	 * make a deep copy for the polynom
 	 * 
 	 * @@return the polynom_able
 	 */
