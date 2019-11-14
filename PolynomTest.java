@@ -12,9 +12,9 @@ public class PolynomTest {
 		//test6(); // test for method for polynom add(Monom m)
 		//test7();
 		//test8();
-		test9();//subb function
+		//test9();//subb function
 		//test10();
-		test11();
+		//test11();
 		//test12();
 
 	}
@@ -22,7 +22,8 @@ public class PolynomTest {
 /**
  * Test for method root
  */
-public static void test12(){
+ 
+ public static void test12(){
 	String[] arr = {"-x^3+x^2+x+4","x^2+2x-1", "x^5-x","x^5-x+1","-x^6+3x+100","x+5","5"};
 	int low = 10;
 	int high = -10;
@@ -50,7 +51,7 @@ public static void test12(){
 	/**
 	 * tester for the area
 	 */
-	public static void test11(){
+public static void test11(){
 		String[] googd = {"x^2","x","5x^3+2x^2+4"};	
 		double[] ans = {1000/3,50,39620/3};	
 		
@@ -76,8 +77,9 @@ public static void test10(){
 	String[] googd = {"x^2+x","2","5x^3+2x^2+4"};
 	String[] seco = {"x^2+x"," 2","5x^3+2x^2+4"};
 
-	//Polynom m1 = new Polynom("2");
-
+	Polynom p1 = new Polynom("2-2+2-2+2");
+	Polynom p3 = new Polynom("2");
+	System.out.println(p1.equals(p3)+"\n\n");
 	//System.out.println(p2.toString());
 	
 	for (int i = 0; i < seco.length; i++) {
@@ -109,7 +111,7 @@ public static void test10(){
 				Polynom p1 = new Polynom(string1);
 
 				System.out.print(p1.toString()+" -  ");
-				System.out.print(p.toString() +" = ");
+				System.out.print("( "+p.toString() +" ) = ");
 				try {
 					p1.substract(p);
 				System.out.println(p1.toString());
@@ -301,7 +303,7 @@ public static void test10(){
 		p1.multiply(p2);
 		System.out.println("(p1+p2)*p2: "+p1);
 		String s1 = p1.toString();
-		Polynom_able pp1 = Polynom.parse(s1);
+		Polynom_able pp1 = new Polynom(s1);
 		System.out.println("from string: "+pp1);
 	}
 	public static void test3(){
