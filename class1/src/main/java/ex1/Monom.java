@@ -234,6 +234,18 @@ public class Monom implements function{
 		return ans;
 	}
 
+	@Override
+	public function initFromString(String s) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public function copy() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	//****************** Private Methods and Data *****************
 	
 

@@ -142,7 +142,7 @@ public class Polynom implements Polynom_able {
 	}
 
 	@Override
-	public boolean equals(Polynom_able p1) {
+	public boolean equals(Object p1) {
 		// Initialization of both polynoms, sorted and without zeros
 		Polynom k1 = new Polynom(p1.toString());
 		Polynom k2 = new Polynom(this.toString());
@@ -281,6 +281,12 @@ public class Polynom implements Polynom_able {
 		str += this.polynom_list.get(length - 1).toString();
 
 		return str;
+	}
+
+	@Override
+	public function initFromString(String s) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
