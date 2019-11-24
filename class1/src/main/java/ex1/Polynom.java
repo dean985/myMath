@@ -1,4 +1,4 @@
-package myMath;
+package ex1;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -6,7 +6,7 @@ import java.util.InputMismatchException;
 import java.util.Iterator;
 import java.util.function.Predicate;
 
-import myMath.Monom;
+import ex1.Monom;
 
 /**
  * This class represents a Polynom with add, multiply functionality, it also
