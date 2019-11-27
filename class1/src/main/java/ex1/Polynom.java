@@ -60,6 +60,7 @@ public class Polynom implements Polynom_able {
 		s = s.replaceAll("#", "-");
 
 		String[] poly = s.split("\\+");
+		//
 		for (String str : poly) {
 			this.polynom_list.add(new Monom(str));
 		}
@@ -90,7 +91,7 @@ public class Polynom implements Polynom_able {
 
 			}
 
-			if(polynom_list.get(polynom_list.size()-1).isZero())
+			if(polynom_list.get(polynom_list.size()-1).isZero() &&  polynom_list.size() != 1)
 			{
 				polynom_list.remove(polynom_list.size()-1);
 			}
