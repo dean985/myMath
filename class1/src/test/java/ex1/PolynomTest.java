@@ -77,27 +77,72 @@ public class PolynomTest
     }
 
     @Test
-    void multiply() {
+    void multiply()
+    {
+        String [] parameter_1 ={"2","-2","2x","3","x+2","x^2+x+1","x^2+x+1","x^2+x-1"};
+        String [] parameter_2 ={"4","5","2","2x+1","x+2","x","x^2+1","x+2+x^2"};
+
+        String [] ans = {"8","-10","4x","6x+3","x^2+4x+4","x^3+x^2+x","x^4+x^3+2x^2+x+1","x^4+2x^3+2x^2+x-2"};
+
+        for (int i = 0; i <parameter_1.length; i++)
+        {
+            Polynom p_1 = new Polynom(parameter_1[i]);
+            Polynom p_2 = new Polynom(parameter_2[i]);
+            Polynom ans_p = new Polynom(ans[i]);
+            p_1.multiply(p_2);
+            assertEquals(ans_p, p_1,parameter_1[i] + "+" + parameter_2[i]);
+        }
     }
 
     @Test
-    void testEquals() {
+    void testEquals()
+    {
+        String [] parameter_1 ={"-2-2","5","3","x","-x","x","x^3","x^3+x","x^3+x^2+5"};
+
+        for (int i = 0; i <parameter_1.length; i++)
+        {
+            Polynom p_1 = new Polynom(parameter_1[i]);
+            Polynom p_2 = new Polynom(parameter_1[i]);
+            assertEquals(true, p_1.equals(p_2),parameter_1[i] );
+        }
     }
 
     @Test
-    void isZero() {
+    void isZero()
+    {
+        Polynom p_1 = new Polynom("0");
+
+        assertEquals(true,p_1.isZero());
+
     }
 
     @Test
-    void root() {
+    void root()
+    { ; }
+
+
+    @Test
+    void copy()
+    {
+        Polynom_able p1 = new Polynom("x^2+x+3");
+        Polynom_able p2 = p1.copy();
+        assertEquals(p1.toString(),p2.toString());
     }
 
     @Test
-    void copy() {
-    }
+    void derivative()
+    {
+        String [] parameter_1 ={"2","x","x^2","2x^3","x^2+x"};
 
-    @Test
-    void derivative() {
+        String [] ans = {"0","1","2x","6x^2","2x+1"};
+
+        for (int i = 0; i <parameter_1.length; i++)
+        {
+            Polynom p_1 = new Polynom(parameter_1[i]);
+            Polynom ans_p = new Polynom(ans[i]);
+            p_1.derivative();
+            assertEquals(ans_p.toString(), p_1.toString(),(i+1)+") "+parameter_1[i] );
+        }
     }
 
     @Test

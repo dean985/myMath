@@ -171,8 +171,8 @@ public class Polynom implements Polynom_able {
 		Polynom k1 = new Polynom(p1.toString());
 		Polynom k2 = new Polynom(this.toString());
 		k2.substract(k1);
-		Polynom_able substraction = k2.copy();
-		if (substraction.isZero()) {
+		//Polynom_able substraction = k2.copy();
+		if (k2.isZero()) {
 			return true;
 		}
 		return false;
@@ -202,8 +202,10 @@ public class Polynom implements Polynom_able {
 	@Override
 	public double root(double x0, double x1, double eps) {
 		// assuming (f(x0)*f(x1)<=0, returns f(x2) such that:
-		// (i) x0<=x2<=x1 & (ii) {f(x2)<eps
-		if (x0 > x1) {
+		// (i) x0<=x2<=x1 & (ii) f(x2) < eps
+
+		if (x0 > x1)
+		{
 			throw new RuntimeException("Invalid input for polynom " + this.toString() + " , Check that x0<x1 ");
 		}
 		if (this.f(x0) * this.f(x1) > 0 && this.f(x0) != this.f(x1)) { // latter argument is because of the private
