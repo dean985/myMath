@@ -46,8 +46,18 @@ public class Polynom implements Polynom_able {
 	public Polynom(String s) {
 
 		s = s.replaceAll(" ", "");// delete spaces
+
+			if (s.indexOf('-') == 0)
+			{
+				s = s.replaceFirst("-","#");
+			}
+
+
+
 		if (!s.contains("+-"))
 			s = s.replaceAll("-", "+-"); // excluding identical process of substraction
+
+		s = s.replaceAll("#", "-");
 
 		String[] poly = s.split("\\+");
 		for (String str : poly) {
@@ -69,18 +79,23 @@ public class Polynom implements Polynom_able {
 		// delete the zeroz monom
 
 		if(polynom_list.size()>1)
-		for (int i = 0; i < polynom_list.size(); i++) {
-			if (polynom_list.get(i).isZero() && i == polynom_list.size()) {
-				break;
-			}
-			// if (i == polynom_list.size())
-			// if(!polynom_list.get(polynom_list.size() - 1).isZero() &&
-			// polynom_list.get(polynom_list.size()).isZero())
-			// polynom_list.remove(i);
-			if (polynom_list.get(i).isZero() || polynom_list.get(i).get_coefficient() == 0)
-				polynom_list.remove(i);
+		{
+			for (int i = 0; i < polynom_list.size(); i++) {
+//				if (polynom_list.get(i).isZero() && i == polynom_list.size()) {
+//					break;
+//				}
 
+				if (polynom_list.get(i).isZero() || polynom_list.get(i).get_coefficient() == 0)
+					polynom_list.remove(i);
+
+			}
+
+			if(polynom_list.get(polynom_list.size()-1).isZero())
+			{
+				polynom_list.remove(polynom_list.size()-1);
+			}
 		}
+
 	}
 
 	///////////////////////////////////////////////////////////////////////////
@@ -90,16 +105,24 @@ public class Polynom implements Polynom_able {
 	@Override
 	public double f(double x) {
 		double res = 0;
-		for (Monom m : this.polynom_list) {
-			res += m.f(x);
+		if(!this.toString().contains("x"))
+			return res;
+		else {
+			for (Monom m : this.polynom_list) {
+				res += m.f(x);
+			}
 		}
 		return res;
 
 	}
 
+	/**
+	 *  get Polynom_able p1 and add it to this
+	 *
+	 * @param p1
+	 */
 	@Override
 	public void add(Polynom_able p1) {
-
 		Polynom p = new Polynom(p1.toString());
 		this.polynom_list.addAll(p.polynom_list);
 		Polynom res = new Polynom(this.toString());
@@ -273,12 +296,13 @@ public class Polynom implements Polynom_able {
 	public String toString() {
 		String str = "";
 		int length = this.polynom_list.size(); // size of arraylist of monoms
-		for (int i = 0; i < length - 1; i++) {
-
-			str += this.polynom_list.get(i).toString() + " + ";
-
+		int i;
+		str += this.polynom_list.get(0).toString();
+		for ( i = 1; i < length ; i++)
+		{
+			str += "+"+ this.polynom_list.get(i).toString();
 		}
-		str += this.polynom_list.get(length - 1).toString();
+
 
 		return str;
 	}
