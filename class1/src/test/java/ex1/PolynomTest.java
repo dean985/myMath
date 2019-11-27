@@ -3,9 +3,11 @@ package ex1;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class PolynomTest
 {
@@ -24,7 +26,6 @@ public class PolynomTest
 //    @AfterEach
 //    void tearDown() {
 //    }
-
     @Test
     void f()
     {
@@ -146,22 +147,45 @@ public class PolynomTest
     }
 
     @Test
-    void area() {
+    void area()
+    {
+        String [] parameter_1 ={"x^2+x+2","x^2+x+2","x^2+x+2","2","0","1","x+2","x^2+2","x^2-2x"};
+        double [] x0 = {0,1,-2,0,0,0,0,0,0};
+        double [] x1 = {1,0,0,3,3,3,3,3,3};
+        double [] ans = {2.83333,-2.83333,4.66,6,0,3,10.5,15,0};
+
+        for (int i = 0; i <parameter_1.length; i++)
+        {
+
+            Polynom p_1 = new Polynom(parameter_1[i]);
+            Double d = p_1.area(x0[i],x1[i],0.001);
+
+          assertTrue( Math.abs(ans[i] - d) < .0001);
+           //assertEquals(, ,i+1 + ") " +parameter_1[i]);
+        }
     }
 
     @Test
-    void iteretor() {
+    void iteretor()
+    {
+
     }
 
     @Test
-    void testMultiply() {
+    void testMultiply()
+    {
+
     }
 
     @Test
-    void testToString() {
+    void testToString()
+    {
+
     }
 
     @Test
-    void initFromString() {
+    void initFromString()
+    {
+
     }
 }

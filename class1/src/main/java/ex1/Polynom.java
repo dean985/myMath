@@ -249,6 +249,7 @@ public class Polynom implements Polynom_able {
 
 	@Override
 	public Polynom_able derivative() {
+
 		Polynom_able p = new Polynom();
 		for (int i = 0; i < this.polynom_list.size(); i++) {
 			Monom temp = this.polynom_list.get(i).derivative();
@@ -280,6 +281,8 @@ public class Polynom implements Polynom_able {
 		 return sum * h / 6;
 		 
 	}
+
+
 
 	@Override
 	public Iterator<Monom> iteretor() {
