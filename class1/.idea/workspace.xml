@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="55482e2b-7a6d-4431-a94e-50e8758a28e7" name="Default Changelist" comment="" />
+    <list default="true" id="55482e2b-7a6d-4431-a94e-50e8758a28e7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ex1/Monom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ex1/Monom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ex1/MonomTest1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ex1/MonomTest1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ex1/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ex1/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ex1/Monom.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ex1/Monom.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ex1/MonomTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ex1/MonomTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ex1/Monom_Comperator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ex1/Monom_Comperator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ex1/Polynom.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ex1/Polynom.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ex1/PolynomTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ex1/PolynomTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ex1/Polynom_able.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ex1/Polynom_able.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ex1/cont_function.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ex1/cont_function.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ex1/function.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ex1/function.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/ex1/AppTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/ex1/AppTest.class" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,12 +30,17 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1UQsxxaTLE44xUKm5FDIT5KYPIV" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
@@ -44,10 +65,121 @@
       </list>
     </option>
   </component>
+  <component name="RunManager" selected="JUnit.MonomTest1.multiply">
+    <configuration name="MonomTest1.add" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="artificat" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ex1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ex1" />
+      <option name="MAIN_CLASS_NAME" value="ex1.MonomTest1" />
+      <option name="METHOD_NAME" value="add" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MonomTest1.get_coefficient" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="artificat" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ex1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ex1" />
+      <option name="MAIN_CLASS_NAME" value="ex1.MonomTest1" />
+      <option name="METHOD_NAME" value="get_coefficient" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MonomTest1.isZero" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="artificat" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ex1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ex1" />
+      <option name="MAIN_CLASS_NAME" value="ex1.MonomTest1" />
+      <option name="METHOD_NAME" value="isZero" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MonomTest1.multiply" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="artificat" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ex1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ex1" />
+      <option name="MAIN_CLASS_NAME" value="ex1.MonomTest1" />
+      <option name="METHOD_NAME" value="multiply" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MonomTest1.testEquals" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="artificat" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ex1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ex1" />
+      <option name="MAIN_CLASS_NAME" value="ex1.MonomTest1" />
+      <option name="METHOD_NAME" value="testEquals" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.MonomTest1.multiply" />
+        <item itemvalue="JUnit.MonomTest1.add" />
+        <item itemvalue="JUnit.MonomTest1.get_coefficient" />
+        <item itemvalue="JUnit.MonomTest1.testEquals" />
+        <item itemvalue="JUnit.MonomTest1.isZero" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="55482e2b-7a6d-4431-a94e-50e8758a28e7" name="Default Changelist" comment="" />
+      <created>1575300404436</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1575300404436</updated>
+    </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
