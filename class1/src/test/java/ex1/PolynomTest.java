@@ -1,9 +1,10 @@
 package ex1;
 
-import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -119,7 +120,8 @@ public class PolynomTest
 
     @Test
     void root()
-    { ; }
+    {
+    }
 
 
     @Test
@@ -139,9 +141,9 @@ public class PolynomTest
 
         for (int i = 0; i <parameter_1.length; i++)
         {
-            Polynom p_1 = new Polynom(parameter_1[i]);
+            Polynom_able p_1 = new Polynom(parameter_1[i]);
             Polynom ans_p = new Polynom(ans[i]);
-            p_1.derivative();
+            p_1 = p_1.derivative();
             assertEquals(ans_p.toString(), p_1.toString(),(i+1)+") "+parameter_1[i] );
         }
     }
@@ -149,19 +151,19 @@ public class PolynomTest
     @Test
     void area()
     {
-        String [] parameter_1 ={"x^2+x+2","x^2+x+2","x^2+x+2","2","0","1","x+2","x^2+2","x^2-2x"};
+        String [] parameter_1 ={"x^2+x+2","x^2+x+2","x^2+x+2","2","0","2x^2-2","x+2","x^2+2","x^2-2x"};
         double [] x0 = {0,1,-2,0,0,0,0,0,0};
         double [] x1 = {1,0,0,3,3,3,3,3,3};
-        double [] ans = {2.83333,-2.83333,4.66,6,0,3,10.5,15,0};
+        double [] ans = {2.83,2.83,4.67,6,0,3,10.5,15,0};
 
         for (int i = 0; i <parameter_1.length; i++)
         {
 
             Polynom p_1 = new Polynom(parameter_1[i]);
-            Double d = p_1.area(x0[i],x1[i],0.001);
+            Double d = Double.parseDouble(new DecimalFormat("##.##").format(p_1.area(x0[i],x1[i],0.001)));
 
-          assertTrue( Math.abs(ans[i] - d) < .0001);
-           //assertEquals(, ,i+1 + ") " +parameter_1[i]);
+            //assertTrue( Math.abs(ans[i] - d) < .0001);
+            assertEquals( ans[i],d,i + ") " +parameter_1[i]);
         }
     }
 

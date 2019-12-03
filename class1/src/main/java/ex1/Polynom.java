@@ -99,15 +99,15 @@ public class Polynom implements Polynom_able {
 
 	}
 
-	///////////////////////////////////////////////////////////////////////////
-	//////////////////////////// methods /////////////////////////
-	///////////////////////////////////////////////////////////////////////////
+	  /////////////////////////////////////////////////////////////////////////
+	 //////////////////////////// methods ////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////
 
 	@Override
 	public double f(double x) {
 		double res = 0;
 		if(!this.toString().contains("x"))
-			return res;
+			return this.polynom_list.get(0).get_coefficient();
 		else {
 			for (Monom m : this.polynom_list) {
 				res += m.f(x);
@@ -172,10 +172,7 @@ public class Polynom implements Polynom_able {
 		Polynom k2 = new Polynom(this.toString());
 		k2.substract(k1);
 		//Polynom_able substraction = k2.copy();
-		if (k2.isZero()) {
-			return true;
-		}
-		return false;
+		return k2.isZero();
 	}
 
 	/**

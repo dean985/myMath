@@ -164,12 +164,9 @@ public class Monom implements function{
 		double difference = this.get_coefficient() - m.get_coefficient(); // this variable represents the substraction of both coefficients
 																		  // if the difference is smaller than EPSILON (as defined above)
 																		  // then the coeffiencts are equal
-		if (difference <=EPSILON 
-			&& this.get_power() == m.get_power()){
-			return true;
-		}
-		return false;
-		
+		return difference <= EPSILON
+				&& this.get_power() == m.get_power();
+
 	}
 		
 	/**

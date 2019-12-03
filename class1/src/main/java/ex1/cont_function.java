@@ -13,7 +13,7 @@ public interface cont_function extends function{
 	 * @param eps positive step value
 	 * @return the approximated area above X-axis below this function bounded in the range of [x0,x1]
 	 */
-	public double area(double x0, double x1, double eps);
+    double area(double x0, double x1, double eps);
 	
 	/**
 	 * Compute a value x' (x0<=x'<=x1) for with |f(x')| < eps
@@ -26,5 +26,5 @@ public interface cont_function extends function{
 	 * @param eps>0 (positive) representing the epsilon range the solution should be within.
 	 * @return an approximated value (root) for this (cont.) function 
 	 */
-	public double root(double x0, double x1, double eps);
+    double root(double x0, double x1, double eps);
 }
