@@ -118,7 +118,12 @@ class MonomTest1 {
 
     @Test
     void testToString() {
-
+        String[] monoms1 = {"1",     "2x",    "3x^2", "-1x", "0x^4", "0"};
+        String[] monoms2 = {"1.0", "2.0x^1", "3.0x^2", "-1.0x^1", "0.0",   "0.0"};
+        for (int i =0 ; i <monoms1.length; i++){
+            Monom m = new Monom(monoms1[i]);
+            assertEquals(monoms2[i], m.toString());
+        }
     }
 
     @Test
@@ -127,5 +132,14 @@ class MonomTest1 {
 
     @Test
     void copy() {
+        String[] monoms1 = {"1",     "2x",    "3x^2", "-1x", "0x^4", "0"};
+        String[] monoms2 = {"1.0", "2.0x^1", "3.0x^2", "-1.0x^1", "0.0",   "0.0"};
+        for (int i = 0; i<monoms1.length; i++){
+            Monom m = new Monom(monoms1[i]);
+            function m_copy = new Monom(0,0);
+            m_copy = m.copy();
+
+            assertEquals(monoms2[i].toString(), m_copy.toString());
+        }
     }
 }

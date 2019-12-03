@@ -54,15 +54,16 @@ public class Monom implements function{
 		double coeffD =0;
 		if(s.length()>0){
 			if (s.contains("x")){
+
 				//Coefficient
 				String coeff = s.substring(0,s.indexOf("x"));
 				if(s.charAt(0) == 'x' ) {
 					coeffD = 1.0;
 				}
-				else if (s.charAt(0) == '-' && s.charAt(1) == 'x')
-					coeffD = -1.0;
-				else
-					coeffD = Double.parseDouble(coeff);
+					else if (s.charAt(0) == '-' && s.charAt(1) == 'x')
+						coeffD = -1.0;
+					else
+						coeffD = Double.parseDouble(coeff);
 					
 				this.set_coefficient(coeffD);
 
@@ -71,6 +72,7 @@ public class Monom implements function{
 				if(s.contains("^")){
                     if (this.get_coefficient() == 0){
                         this.set_power(0);
+                        getNewZeroMonom();
                     }
 				    else{
 				        int indexP = s.indexOf("^");
@@ -247,13 +249,13 @@ public class Monom implements function{
 		return ans;
 	}
 
-	@Override
+	//@Override
 	public function initFromString(String s) {
-		// TODO Auto-generated method stub
-		return null;
+		Monom m = new Monom(s);
+		return m;
 	}
 
-	@Override
+	//@Override
 	public function copy() {
 		Monom m = new Monom(this.get_coefficient(), this._power);
 		return m;
