@@ -51,9 +51,6 @@ public class Polynom implements Polynom_able {
 			{
 				s = s.replaceFirst("-","#");
 			}
-
-
-
 		if (!s.contains("+-"))
 			s = s.replaceAll("-", "+-"); // excluding identical process of substraction
 
@@ -130,6 +127,10 @@ public class Polynom implements Polynom_able {
 		this.polynom_list = res.polynom_list;
 	}
 
+	/**
+	 * the function add Monom to the Polynom, the answer get in the Polynom obj
+	 * @param m1 Monom
+	 */
 	@Override
 	public void add(Monom m1) {
 		this.polynom_list.add(m1);
@@ -206,7 +207,7 @@ public class Polynom implements Polynom_able {
 			throw new RuntimeException("Invalid input for polynom " + this.toString() + " , Check that x0<x1 ");
 		}
 		if (this.f(x0) * this.f(x1) > 0 && this.f(x0) != this.f(x1)) { // latter argument is because of the private
-																		// case- constant monom
+																		// case - constant monom
 			throw new RuntimeException("For polynom " + this.toString() + " , Check that f(x0)*f(x1)<=0 ");
 		}
 
@@ -216,7 +217,7 @@ public class Polynom implements Polynom_able {
 			mid = (x1 + x0) / 2;
 			if (this.f(mid) == 0) {
 				break;
-			} else if (this.f(mid) * this.f(x0) < 0) {
+			} else if (this.f(mid) > 0) {// * this.f(x0)
 				x1 = mid;
 			} else {
 				x0 = mid;
@@ -225,8 +226,11 @@ public class Polynom implements Polynom_able {
 		if (this.f(mid) <= eps) {
 			return mid;
 		}
+
 		// In case there are no roots, return max value
-		return Double.MAX_VALUE;
+
+		throw new RuntimeException("no root for the polynom "+ this.toString()+" try rais the epsilon or change the search range");
+
 	}
 
 	/**
@@ -275,25 +279,10 @@ public class Polynom implements Polynom_able {
 			 mid = _x + h / 2;
 		 }
 		 sum += 4 * this.f(mid) + this.f(x1);
-		 return sum * h / 6;
+		 return Math.abs(sum * h / 6);
 		 
 	}
 
-
-
-	@Override
-	public Iterator<Monom> iteretor() {
-		// TODO Auto-generated method stub
-		return this.polynom_list.iterator();
-	}
-
-	@Override
-	public void multiply(Monom m1) {
-		for (Monom m2 : this.polynom_list) {
-			m2.multiply(m1);
-		}
-
-	}
 
 	@Override
 	public String toString() {
@@ -310,10 +299,29 @@ public class Polynom implements Polynom_able {
 		return str;
 	}
 
+
+	@Override
+	public Iterator<Monom> iteretor() {
+		// TODO Auto-generated method stub
+		return this.polynom_list.iterator();
+	}
+
+	@Override
+	public void multiply(Monom m1) {
+		for (Monom m2 : this.polynom_list) {
+			m2.multiply(m1);
+		}
+
+	}
+
+
 	@Override
 	public function initFromString(String s) {
-		// TODO Auto-generated method stub
-		return null;
+
+		function polynom = new Polynom(s);
+		//this.copy();
+		return 	polynom;
+
 	}
 
 }
