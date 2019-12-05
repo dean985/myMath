@@ -263,7 +263,13 @@ public class Monom implements function{
 
 	//****************** Private Methods and Data *****************
 	
-
+	public Monom comp(Monom m){
+		// Comp: comp(f1(x), f2(x)) == f1(f2(x))
+		int newPow = this.get_power() * m.get_power();
+		double newCoeff = this.get_coefficient() * m.get_coefficient();
+		Monom res = new Monom(newCoeff, newPow);
+		return res;
+	}
 	
 	
 	
