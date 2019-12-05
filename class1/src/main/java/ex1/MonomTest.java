@@ -1,4 +1,6 @@
 package ex1;
+import org.junit.jupiter.api.Test;
+
 import java.util.ArrayList;
 /**
  * This class represents a simple (naive) tester for the Monom class, 
@@ -19,17 +21,15 @@ import java.util.ArrayList;
 */
 public class MonomTest {
 	public static void main(String[] args) {
-		test1();
-		// test2();
+		//test1();
+		//test2();
 		//test3();
 		//test4();
 		//test5();
 		//test6();
 	}
-	private static void test6(){
-		String st = "x";
-		Monom m = new Monom (st);
-	}
+
+	@Test
 	private static void test1() {
 		System.out.println("*****  Test1:  *****");
 		String[] monoms = {"2", "x","-3.2x^2","0"};
