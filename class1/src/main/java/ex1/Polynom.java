@@ -46,10 +46,18 @@ public class Polynom implements Polynom_able {
 	public Polynom(String s) {
 
 		s = s.replaceAll(" ", "");// delete spaces
+
+			if (s.indexOf('-') == 0)
+			{
+				s = s.replaceFirst("-","#");
+			}
 		if (!s.contains("+-"))
 			s = s.replaceAll("-", "+-"); // excluding identical process of substraction
 
+		s = s.replaceAll("#", "-");
+
 		String[] poly = s.split("\\+");
+		//
 		for (String str : poly) {
 			this.polynom_list.add(new Monom(str));
 		}
@@ -69,43 +77,60 @@ public class Polynom implements Polynom_able {
 		// delete the zeroz monom
 
 		if(polynom_list.size()>1)
-		for (int i = 0; i < polynom_list.size(); i++) {
-			if (polynom_list.get(i).isZero() && i == polynom_list.size()) {
-				break;
-			}
-			// if (i == polynom_list.size())
-			// if(!polynom_list.get(polynom_list.size() - 1).isZero() &&
-			// polynom_list.get(polynom_list.size()).isZero())
-			// polynom_list.remove(i);
-			if (polynom_list.get(i).isZero() || polynom_list.get(i).get_coefficient() == 0)
-				polynom_list.remove(i);
+		{
+			for (int i = 0; i < polynom_list.size(); i++) {
+//				if (polynom_list.get(i).isZero() && i == polynom_list.size()) {
+//					break;
+//				}
 
+				if (polynom_list.get(i).isZero() || polynom_list.get(i).get_coefficient() == 0)
+					polynom_list.remove(i);
+
+			}
+
+			if(polynom_list.get(polynom_list.size()-1).isZero() &&  polynom_list.size() != 1)
+			{
+				polynom_list.remove(polynom_list.size()-1);
+			}
 		}
+
 	}
 
-	///////////////////////////////////////////////////////////////////////////
-	//////////////////////////// methods /////////////////////////
-	///////////////////////////////////////////////////////////////////////////
+	  /////////////////////////////////////////////////////////////////////////
+	 //////////////////////////// methods ////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////
 
 	@Override
 	public double f(double x) {
 		double res = 0;
-		for (Monom m : this.polynom_list) {
-			res += m.f(x);
+		if(!this.toString().contains("x"))
+			return this.polynom_list.get(0).get_coefficient();
+		else {
+			for (Monom m : this.polynom_list) {
+				res += m.f(x);
+			}
 		}
 		return res;
 
 	}
 
+	/**
+	 *  get Polynom_able p1 and add it to this
+	 *
+	 * @param p1
+	 */
 	@Override
 	public void add(Polynom_able p1) {
-
 		Polynom p = new Polynom(p1.toString());
 		this.polynom_list.addAll(p.polynom_list);
 		Polynom res = new Polynom(this.toString());
 		this.polynom_list = res.polynom_list;
 	}
 
+	/**
+	 * the function add Monom to the Polynom, the answer get in the Polynom obj
+	 * @param m1 Monom
+	 */
 	@Override
 	public void add(Monom m1) {
 		this.polynom_list.add(m1);
@@ -147,11 +172,8 @@ public class Polynom implements Polynom_able {
 		Polynom k1 = new Polynom(p1.toString());
 		Polynom k2 = new Polynom(this.toString());
 		k2.substract(k1);
-		Polynom_able substraction = k2.copy();
-		if (substraction.isZero()) {
-			return true;
-		}
-		return false;
+		//Polynom_able substraction = k2.copy();
+		return k2.isZero();
 	}
 
 	/**
@@ -178,12 +200,14 @@ public class Polynom implements Polynom_able {
 	@Override
 	public double root(double x0, double x1, double eps) {
 		// assuming (f(x0)*f(x1)<=0, returns f(x2) such that:
-		// (i) x0<=x2<=x1 & (ii) {f(x2)<eps
-		if (x0 > x1) {
+		// (i) x0<=x2<=x1 & (ii) f(x2) < eps
+
+		if (x0 > x1)
+		{
 			throw new RuntimeException("Invalid input for polynom " + this.toString() + " , Check that x0<x1 ");
 		}
 		if (this.f(x0) * this.f(x1) > 0 && this.f(x0) != this.f(x1)) { // latter argument is because of the private
-																		// case- constant monom
+																		// case - constant monom
 			throw new RuntimeException("For polynom " + this.toString() + " , Check that f(x0)*f(x1)<=0 ");
 		}
 
@@ -193,7 +217,7 @@ public class Polynom implements Polynom_able {
 			mid = (x1 + x0) / 2;
 			if (this.f(mid) == 0) {
 				break;
-			} else if (this.f(mid) * this.f(x0) < 0) {
+			} else if (this.f(mid) > 0) {// * this.f(x0)
 				x1 = mid;
 			} else {
 				x0 = mid;
@@ -202,8 +226,11 @@ public class Polynom implements Polynom_able {
 		if (this.f(mid) <= eps) {
 			return mid;
 		}
+
 		// In case there are no roots, return max value
-		return Double.MAX_VALUE;
+
+		throw new RuntimeException("no root for the polynom "+ this.toString()+" try rais the epsilon or change the search range");
+
 	}
 
 	/**
@@ -223,6 +250,7 @@ public class Polynom implements Polynom_able {
 
 	@Override
 	public Polynom_able derivative() {
+
 		Polynom_able p = new Polynom();
 		for (int i = 0; i < this.polynom_list.size(); i++) {
 			Monom temp = this.polynom_list.get(i).derivative();
@@ -251,9 +279,26 @@ public class Polynom implements Polynom_able {
 			 mid = _x + h / 2;
 		 }
 		 sum += 4 * this.f(mid) + this.f(x1);
-		 return sum * h / 6;
+		 return Math.abs(sum * h / 6);
 		 
 	}
+
+
+	@Override
+	public String toString() {
+		String str = "";
+		int length = this.polynom_list.size(); // size of arraylist of monoms
+		int i;
+		str += this.polynom_list.get(0).toString();
+		for ( i = 1; i < length ; i++)
+		{
+			str += "+"+ this.polynom_list.get(i).toString();
+		}
+
+
+		return str;
+	}
+
 
 	@Override
 	public Iterator<Monom> iteretor() {
@@ -269,24 +314,14 @@ public class Polynom implements Polynom_able {
 
 	}
 
-	@Override
-	public String toString() {
-		String str = "";
-		int length = this.polynom_list.size(); // size of arraylist of monoms
-		for (int i = 0; i < length - 1; i++) {
-
-			str += this.polynom_list.get(i).toString() + " + ";
-
-		}
-		str += this.polynom_list.get(length - 1).toString();
-
-		return str;
-	}
 
 	@Override
 	public function initFromString(String s) {
-		// TODO Auto-generated method stub
-		return null;
+
+		function polynom = new Polynom(s);
+		//this.copy();
+		return 	polynom;
+
 	}
 
 }
