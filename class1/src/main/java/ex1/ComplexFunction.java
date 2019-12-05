@@ -10,6 +10,15 @@ import static ex1.Operation.Times;
  */
 public class ComplexFunction implements complex_function{
     Operation op ;
+
+
+    /**
+     *
+     * @param string
+     * @param m1
+     * @param m2
+     *
+     */
     public ComplexFunction(String string, Monom m1, Monom m2) {
         // Understanding which operation is in input
         String str = string.substring(0, 1).toUpperCase() + string.substring(1);      // Capitalize first letter of operation

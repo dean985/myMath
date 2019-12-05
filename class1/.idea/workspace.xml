@@ -2,11 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55482e2b-7a6d-4431-a94e-50e8758a28e7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/ex1/ComplexFunctionTest1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/artificat.iml" beforeDir="false" afterPath="$PROJECT_DIR$/artificat.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ex1/ComplexFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ex1/ComplexFunction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ex1/Monom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ex1/Monom.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ex1/Operation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ex1/Operation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ex1/MonomTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ex1/ComplexFunction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ex1/ComplexFunction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ex1/Monom.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ex1/Monom.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ex1/Operation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ex1/Operation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ex1/Polynom.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ex1/Polynom.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/ex1/ComplexFunctionTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/ex1/ComplexFunctionTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/ex1/MonomTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/ex1/PolynomTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/ex1/PolynomTest.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,6 +41,9 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
