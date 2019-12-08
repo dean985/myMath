@@ -68,7 +68,6 @@ public class MonomTest {
 					System.out.print(" +"+m2+"= "+temp+"\n");
 
 				} catch (Exception e) {
-					//TODO: handle exception
 					System.out.print(" +"+m2+" = unable to solve\n");
 				}
 				

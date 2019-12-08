@@ -302,7 +302,6 @@ public class Polynom implements Polynom_able {
 
 	@Override
 	public Iterator<Monom> iteretor() {
-		// TODO Auto-generated method stub
 		return this.polynom_list.iterator();
 	}
 
