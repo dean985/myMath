@@ -10,19 +10,6 @@ import java.awt.Font;
 public class FunctionGraph {
 	public static void main(String[] args) {
 		// number of line segments to plot
-
-
-		// plot the approximation to the function
-//		for (int i = 0; i < n; i++) {
-//			StdDraw.line(x[i], y[i], x[i+1], y[i+1]);
-//		}
-//		StdDraw.setPenColor(Color.RED);
-//		StdDraw.setPenRadius(0.01);
-//		StdDraw.point(x[n/2], 1);
-	}
-
-	public static void DrawBoard()
-	{
 		int n = 100;
 		double maxY = 2.0, minY = -2.0;
 
@@ -60,6 +47,19 @@ public class FunctionGraph {
 		for (double i = minY; i <= maxY; i=i+0.5) {
 			StdDraw.text(x[n/2]-0.07, i+0.07, Double.toString(i));
 		}
+
+		// plot the approximation to the function
+		for (int i = 0; i < n; i++) {
+			StdDraw.line(x[i], y[i], x[i+1], y[i+1]);
+		}
+		StdDraw.setPenColor(Color.RED);
+		StdDraw.setPenRadius(0.01);
+		StdDraw.point(x[n/2], 1);
+	}
+
+	public static void DrawBoard()
+	{
+
 	}
 
 

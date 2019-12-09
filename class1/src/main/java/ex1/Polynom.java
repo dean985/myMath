@@ -259,27 +259,48 @@ public class Polynom implements Polynom_able {
 		return p;
 	}
 
+
 	@Override
 	public double area(double x0, double x1, double eps) {
-		 if (x0 > x1) { // swap in that case
-			 double x_t = x1;
-			 x1 = x0;
-			 x0 = x_t;
+
+
+		if (x0 > x1) { // swap in that case
+			throw new RuntimeException("x0 is greater than x1");
 		 }
-		 final int n = 100; // n partitions
-		 double h = (x1 - x0) / n; // partitioning delta x to n partitions
-		 double _x = x0;
-		 double mid = _x + h / 2;
-		 double sum = this.f(_x); // intializing sum as the value of the function in the middle of the interval
-		 int i = 0;
-		 while (i < n - 1) { // loop to 'run' on each partition, rieman sums
-			 i++;
-			 _x = x0 + i * h; 
-			 sum += 4 * this.f(mid) + 2 * this.f(_x);
-			 mid = _x + h / 2;
-		 }
-		 sum += 4 * this.f(mid) + this.f(x1);
-		 return Math.abs(sum * h / 6);
+		double sum = 0;
+
+		while(x0<x1)
+		{
+
+			if(this.f(x0) > 0)
+			{
+				sum += this.f(x0)*eps;
+			}
+
+			x0 += eps;
+		}
+		return sum;
+
+
+//		 if (x0 > x1) { // swap in that case
+//			 double x_t = x1;
+//			 x1 = x0;
+//			 x0 = x_t;
+//		 }
+//		 final int n = 100; // n partitions
+//		 double h = (x1 - x0) / n; // partitioning delta x to n partitions
+//		 double _x = x0;
+//		 double mid = _x + h / 2;
+//		 double sum = this.f(_x); // intializing sum as the value of the function in the middle of the interval
+//		 int i = 0;
+//		 while (i < n - 1) { // loop to 'run' on each partition, rieman sums
+//			 i++;
+//			 _x = x0 + i * h;
+//			 sum += 4 * this.f(mid) + 2 * this.f(_x);
+//			 mid = _x + h / 2;
+//		 }
+//		 sum += 4 * this.f(mid) + this.f(x1);
+//		 return Math.abs(sum * h / 6);
 		 
 	}
 
