@@ -30,7 +30,7 @@ public class ComplexFunction implements complex_function{
         // Understanding which operation is in input
         Operation op;
         string = string.toLowerCase();
-       
+
         if (string.equals("plus")){
             this.op = Plus;
         }
