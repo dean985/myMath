@@ -19,8 +19,8 @@ class ComplexFunctionTest1 {
         String str = "plus(2.0x^2,3.0x^3)";
         assertEquals(str,cf.toString() );
 
-        // #2
-
+        ComplexFunction cf2 = new ComplexFunction("abc", p1, m2);
+        System.out.println(cf2.toString());
 
     }
     @Test

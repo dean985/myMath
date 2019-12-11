@@ -14,6 +14,10 @@ public class ComplexFunction implements complex_function{
     function left;
     function right;
 
+    public ComplexFunction(){
+        ;
+    }
+
     /**
      *
      * @param string
@@ -22,25 +26,11 @@ public class ComplexFunction implements complex_function{
      *
      */
 
-    public ComplexFunction(String string, function left, function right) {
+    public ComplexFunction(String string, function left, function right) throws Exception {
         // Understanding which operation is in input
         Operation op;
         string = string.toLowerCase();
-        /*
-        switch(string)
-        {
-            case "plus" :   op = Operation.Plus; 	break;
-            case "times" :  op = Operation.Times; break;
-            case "divide" : op = Operation.Divide; break;
-            case "max": op = Operation.Max; 	break;
-            case "min": op = Operation.Min; 	break;
-            case "comp":    op = Operation.Comp; 	break;
-            case "none":    op = Operation.None; 	break;
-            default:    op = Operation.Error;	break;
-        }
-
-
-         */
+       
         if (string.equals("plus")){
             this.op = Plus;
         }
@@ -62,6 +52,7 @@ public class ComplexFunction implements complex_function{
             this.op = None;
         }else {
             this.op = Error;
+            throw new Exception("Wrong input for operation");
         }
 
 
