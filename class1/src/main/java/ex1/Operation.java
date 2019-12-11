@@ -8,6 +8,7 @@ package ex1;
 public enum Operation {
 	Plus, Times, Divide, Max, Min, Comp , None, Error;
 
+
 	}
 
 
