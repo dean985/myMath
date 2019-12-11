@@ -287,7 +287,7 @@ public class PolynomTest
          */
 
 
-        String[] bad_polynoms = {"(1)","x+d^4","(x^2+x)+2", "0.5x^2","a"};
+        String[] bad_polynoms = {"(1)","5x+d^4","(x^2+x)+2", "0.5x^2","a"};
 
         assertThrows(Exception.class, () -> {
             for (int i = 0; i < bad_polynoms.length; i++) {
