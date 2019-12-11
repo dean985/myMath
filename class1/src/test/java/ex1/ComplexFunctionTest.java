@@ -10,6 +10,8 @@ import org.junit.Test;
 
 class ComplexFunctionTest {
 	public static final double EPS = 0.00001;
+
+
 	@Test
 	void test() {
 		Monom m1 = new Monom(2,2);

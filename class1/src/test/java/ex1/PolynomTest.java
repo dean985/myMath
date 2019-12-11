@@ -174,7 +174,7 @@ public class PolynomTest
     void copy()
     {
         Polynom_able p1 = new Polynom("x^2+x+3");
-        Polynom_able p2 = p1.copy();
+        Polynom_able p2 = (Polynom_able) p1.copy();
 
         ///check if the objects are not the same so the developer didn't copy the pointer to the object
         assertNotSame(p1,p2);
