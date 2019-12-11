@@ -1,16 +1,16 @@
 package ex1;
 
-import ex1.Polynom;
-import ex1.Polynom_able;
-import org.junit.jupiter.api.*;
 
-import java.math.BigDecimal;
+import org.junit.jupiter.api.*;
+import static org.junit.jupiter.api.Assertions.*;
+
+
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-import static org.junit.jupiter.api.Assertions.*;
+
 
 public class PolynomTest
 {
@@ -201,7 +201,7 @@ public class PolynomTest
     {
         String [] parameter_1 ={"x^2+x+2","x^2+x+2","x^2+x+2","2","0","2x^2-2","x+2","x^2+2","x^2-2x"};
         double [] x0 = {0,1,-2,0,0,0,0,0,0};
-        double [] x1 = {1,0,0,3,3,3,3,3,3};
+        double [] x1 = {1,5,0,3,3,3,3,3,3};
         double [] ans = {2.83,2.83,4.67,6,0,12,10.5,15,0};
 
         for (int i = 0; i <parameter_1.length; i++)

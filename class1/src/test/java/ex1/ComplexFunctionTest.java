@@ -9,6 +9,7 @@ import org.junit.Test;
 
 
 class ComplexFunctionTest {
+
 	public static final double EPS = 0.00001;
 
 
@@ -17,7 +18,8 @@ class ComplexFunctionTest {
 		Monom m1 = new Monom(2,2);
 		Monom m2 = new Monom(3,3);
 		ComplexFunction cf = new ComplexFunction("plus", m1,m2);
-	//	System.out.println(cf);
+
+		//	System.out.println(cf);
 		cf.mul(m2);
 		System.out.println(cf);
 		Polynom p = new Polynom();

@@ -26,7 +26,7 @@ public class ComplexFunction implements complex_function{
      *
      */
 
-    public ComplexFunction(String string, function left, function right) throws Exception {
+    public ComplexFunction(String string, function left, function right) {
         // Understanding which operation is in input
         Operation op;
         string = string.toLowerCase();
@@ -52,7 +52,7 @@ public class ComplexFunction implements complex_function{
             this.op = None;
         }else {
             this.op = Error;
-            throw new Exception("Wrong input for operation");
+        //    throw new Exception("Wrong input for operation");
         }
 
 
@@ -186,7 +186,7 @@ public class ComplexFunction implements complex_function{
     }
 
     @Override
-    public function initFromString(String s) {
+    public function initFromString(String s)  {
 
         s.replaceAll("\\s+","");
        // if there are no '(' or ')'
@@ -208,7 +208,10 @@ public class ComplexFunction implements complex_function{
             function left = initFromString( s.substring(firstParen+1, sp));
             function right = initFromString( s.substring(sp+1, s.length()-1));
 
-            function f = new ComplexFunction(op, left, right);
+            function f = null;
+
+                f = new ComplexFunction(op, left, right);
+
             return f;
             }
         }
@@ -286,7 +289,7 @@ public class ComplexFunction implements complex_function{
     }
 
     @Override
-    public void max(function f1) {
+    public void max(function f1)  {
         if (this.left != null){
             ComplexFunction cf1 = new ComplexFunction(this.op.toString(), this.left, this.right);
             this.left = cf1;
@@ -307,7 +310,7 @@ public class ComplexFunction implements complex_function{
     }
 
     @Override
-    public void comp(function f1) {
+    public void comp(function f1)  {
         if (this.left != null){
             ComplexFunction cf1 = new ComplexFunction(this.op.toString(), this.left, this.right);
             this.left = cf1;

@@ -1,104 +1,106 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="55482e2b-7a6d-4431-a94e-50e8758a28e7" name="Default Changelist" comment="">
+    <list default="true" id="cbbd5d71-825f-4517-8993-d9821ba9ea39" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/org_json_json_20190722.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/org_junit_surefire_junit5_5_0_0_ALPHA.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/common-java5-2.19-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/common-java5-2.19-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/common-java5-2.19.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/hamcrest-core-1.3-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/hamcrest-core-1.3-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/hamcrest-core-1.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/json-20190722-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/json-20190722-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/json-20190722.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/junit-4.12-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/junit-4.12-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/junit-4.12.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/junit-commons-5.0.0-ALPHA-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/junit-commons-5.0.0-ALPHA-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/junit-commons-5.0.0-ALPHA.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/junit-engine-api-5.0.0-ALPHA-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/junit-engine-api-5.0.0-ALPHA-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/junit-engine-api-5.0.0-ALPHA.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/junit-launcher-5.0.0-ALPHA-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/junit-launcher-5.0.0-ALPHA-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/junit-launcher-5.0.0-ALPHA.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/junit4-engine-5.0.0-ALPHA-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/junit4-engine-5.0.0-ALPHA-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/junit4-engine-5.0.0-ALPHA.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/junit5-api-5.0.0-ALPHA-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/junit5-api-5.0.0-ALPHA-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/junit5-api-5.0.0-ALPHA.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/junit5-engine-5.0.0-ALPHA-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/junit5-engine-5.0.0-ALPHA-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/junit5-engine-5.0.0-ALPHA.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/opentest4j-1.0.0-ALPHA-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/opentest4j-1.0.0-ALPHA-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/opentest4j-1.0.0-ALPHA.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/surefire-api-2.19-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/surefire-api-2.19-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/surefire-api-2.19.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/surefire-junit5-5.0.0-ALPHA-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/surefire-junit5-5.0.0-ALPHA-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/surefire-junit5-5.0.0-ALPHA.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_11.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ex1/ComplexFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ex1/ComplexFunction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ex1/Operation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ex1/Operation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ex1/ComplexFunctionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ex1/ComplexFunctionTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ex1/ComplexFunctionTest1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ex1/ComplexFunctionTest1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ex1/PolynomTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ex1/PolynomTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ex1/App.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ex1/ComplexFunction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ex1/Monom.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ex1/Monom_Comperator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ex1/Operation.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ex1/Polynom.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ex1/Polynom_able.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ex1/Range.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ex1/complex_function.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ex1/cont_function.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ex1/function.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ex1/functions.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/META-INF/artificat.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/ex1/AppTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/ex1/ComplexFunctionTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/ex1/MonomTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/ex1/PolynomTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ex1/ComplexFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ex1/ComplexFunction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ex1/MonomTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ex1/complex_function.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ex1/complex_function.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ex1/function.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ex1/function.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/ex1/ComplexFunctionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/ex1/ComplexFunctionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/ex1/MonomTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/ex1/MonomTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/ex1/PolynomTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/ex1/PolynomTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="JUnit5 Test Class" />
-      </list>
-    </option>
+  <component name="FavoritesManager">
+    <favorites_list name="myMath" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1UQsxxaTLE44xUKm5FDIT5KYPIV" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="jreName" value="14" />
+  </component>
+  <component name="ProjectId" id="1Uqx8ggDLA318lQek95QXzlKCm0" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Downloaded.Files.Path.Enabled" value="true" />
     <property name="Repository.Attach.Annotations" value="false" />
-    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="true" />
     <property name="Repository.Attach.Sources" value="false" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
-    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="findjar.last.used.dir" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.3678161" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.tabs" />
   </component>
-  <component name="RecentsManager">
-    <key name="CreateTestDialog.RecentsKey">
-      <recent name="ex1" />
-    </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
-    </key>
-  </component>
-  <component name="RunManager" selected="JUnit.ComplexFunctionTest1.constructor">
-    <configuration name="ComplexFunctionTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ex1.ComplexFunctionTest" />
-      <module name="artificat" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ex1.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Operation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ex1.Operation" />
-      <module name="artificat" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ex1.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ComplexFunctionTest1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="artificat" />
+  <component name="RunManager" selected="JUnit.PolynomTest">
+    <configuration name="Functions_GUITest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="myMath" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="ex1.*" />
@@ -106,14 +108,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="ex1" />
-      <option name="MAIN_CLASS_NAME" value="ex1.ComplexFunctionTest1" />
+      <option name="MAIN_CLASS_NAME" value="ex1.Functions_GUITest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ComplexFunctionTest1.constructor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="artificat" />
+    <configuration name="MonomTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="myMath" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="ex1.*" />
@@ -121,15 +123,48 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="ex1" />
-      <option name="MAIN_CLASS_NAME" value="ex1.ComplexFunctionTest1" />
-      <option name="METHOD_NAME" value="constructor" />
+      <option name="MAIN_CLASS_NAME" value="ex1.MonomTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="PARAMETERS" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MonomTest.derivative" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="myMath" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ex1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ex1" />
+      <option name="MAIN_CLASS_NAME" value="ex1.MonomTest" />
+      <option name="METHOD_NAME" value="derivative" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PolynomTest.copy" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="artificat" />
+    <configuration name="MonomTest.get_coefficient" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="myMath" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ex1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ex1" />
+      <option name="MAIN_CLASS_NAME" value="ex1.MonomTest" />
+      <option name="METHOD_NAME" value="get_coefficient" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PolynomTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="myMath" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="ex1.*" />
@@ -138,19 +173,18 @@
       </extension>
       <option name="PACKAGE_NAME" value="ex1" />
       <option name="MAIN_CLASS_NAME" value="ex1.PolynomTest" />
-      <option name="METHOD_NAME" value="copy" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ComplexFunctionTest1.constructor" />
-        <item itemvalue="Application.Operation" />
-        <item itemvalue="JUnit.PolynomTest.copy" />
-        <item itemvalue="Application.ComplexFunctionTest" />
-        <item itemvalue="JUnit.ComplexFunctionTest1" />
+        <item itemvalue="JUnit.PolynomTest" />
+        <item itemvalue="JUnit.Functions_GUITest" />
+        <item itemvalue="JUnit.MonomTest" />
+        <item itemvalue="JUnit.MonomTest.get_coefficient" />
+        <item itemvalue="JUnit.MonomTest.derivative" />
       </list>
     </recent_temporary>
   </component>
@@ -171,31 +205,58 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="55482e2b-7a6d-4431-a94e-50e8758a28e7" name="Default Changelist" comment="" />
-      <created>1575300404436</created>
+      <changelist id="cbbd5d71-825f-4517-8993-d9821ba9ea39" name="Default Changelist" comment="" />
+      <created>1576097769449</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1575300404436</updated>
+      <updated>1576097769449</updated>
     </task>
     <servers />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
   <component name="WindowStateProjectService">
-    <state x="693" y="230" width="528" height="591" key="FileChooserDialogImpl" timestamp="1576000364168">
-      <screen x="0" y="0" width="1920" height="1052" />
+    <state x="584" y="122" width="924" height="677" key="#MonomTest" timestamp="1576100946785">
+      <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state x="693" y="230" width="528" height="591" key="FileChooserDialogImpl/0.0.1920.1052@0.0.1920.1052" timestamp="1576000364168" />
+    <state x="584" y="122" width="924" height="677" key="#MonomTest/70.27.1850.1053@70.27.1850.1053" timestamp="1576100946785" />
+    <state x="528" y="218" width="924" height="677" key="#PolynomTest" timestamp="1576100955969">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state x="528" y="218" width="924" height="677" key="#PolynomTest/70.27.1850.1053@70.27.1850.1053" timestamp="1576100955969" />
+    <state x="591" y="147" width="797" height="820" key="CommitChangelistDialog2" timestamp="1576101424355">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state x="591" y="147" width="797" height="820" key="CommitChangelistDialog2/70.27.1850.1053@70.27.1850.1053" timestamp="1576101424355" />
+    <state x="778" y="296" width="764" height="528" key="FileChooserDialogImpl" timestamp="1576101668286">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state x="778" y="296" width="764" height="528" key="FileChooserDialogImpl/70.27.1850.1053@70.27.1850.1053" timestamp="1576101668286" />
+    <state width="1804" height="275" key="GridCell.Tab.0.bottom" timestamp="1576101756161">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state width="1804" height="275" key="GridCell.Tab.0.bottom/70.27.1850.1053@70.27.1850.1053" timestamp="1576101756161" />
+    <state width="1804" height="275" key="GridCell.Tab.0.center" timestamp="1576101756160">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state width="1804" height="275" key="GridCell.Tab.0.center/70.27.1850.1053@70.27.1850.1053" timestamp="1576101756160" />
+    <state width="1804" height="275" key="GridCell.Tab.0.left" timestamp="1576101756160">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state width="1804" height="275" key="GridCell.Tab.0.left/70.27.1850.1053@70.27.1850.1053" timestamp="1576101756160" />
+    <state width="1804" height="275" key="GridCell.Tab.0.right" timestamp="1576101756160">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state width="1804" height="275" key="GridCell.Tab.0.right/70.27.1850.1053@70.27.1850.1053" timestamp="1576101756160" />
+    <state x="494" y="228" width="1343" height="852" key="SettingsEditor" timestamp="1576101266956">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state x="494" y="228" width="1343" height="852" key="SettingsEditor/70.27.1850.1053@70.27.1850.1053" timestamp="1576101266956" />
+    <state x="638" y="336" key="com.intellij.ide.util.TipDialog" timestamp="1576101658893">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state x="638" y="336" key="com.intellij.ide.util.TipDialog/70.27.1850.1053@70.27.1850.1053" timestamp="1576101658893" />
+    <state x="868" y="352" width="686" height="232" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1576098795914">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state x="868" y="352" width="686" height="232" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/70.27.1850.1053@70.27.1850.1053" timestamp="1576098795914" />
   </component>
 </project>

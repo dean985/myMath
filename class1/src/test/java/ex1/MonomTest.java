@@ -1,14 +1,18 @@
 package ex1;
 
+
+//import org.junit.Test;
 import org.junit.jupiter.api.Test;
-import org.junit.platform.engine.support.descriptor.FileSystemSource;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-class MonomTest1 {
 
-    @Test
-    void get_coefficient() {
+public class MonomTest
+ {
+
+   @Test
+    public void get_coefficient() {
         String[] monoms = {"-2x", "0", "x","-x^3","-1x^5","x^6","-x^0", "0.5x^2", " 00023"};
         double[] coeff = {  -2,    0,   1,   -1,     -1,   1,     -1,    0.5 , 23};
         for(int i =0; i<monoms.length; i++){
@@ -18,7 +22,7 @@ class MonomTest1 {
     }
 
     @Test
-    void get_power() {
+   public void get_power() {
         String[] monoms = {"-2x", "0", "x","-x^3","-1x^5","x^6","-x^0", "0.5x^2", "00023x"};
         int[] power =     { 1,    0,   1 ,   3,     5,     6,      0,        2  ,      1 };
         for( int i =0; i< monoms.length; i++){
@@ -28,11 +32,11 @@ class MonomTest1 {
     }
 
     @Test
-    void getComp() {
+    public void getComp() {
     }
 
     @Test
-    void derivative() {
+   public void derivative() {
         String[] monoms = {         "2x^4", "3x", "0", "1", "2x", "-1", "2"};
         String[] afterDerivative = {"8x^3", "3",  "0", "0", "2", "0", "0"};
         for (int i =0 ; i< monoms.length; i++){
@@ -48,7 +52,7 @@ class MonomTest1 {
     }
 
     @Test
-    void f() {
+    public void f() {
         // testing f(x)
         double x = 5;
         String[] monoms = {"2x^4", "3x", "0", "1", "2x", "-1"};
@@ -61,7 +65,7 @@ class MonomTest1 {
     }
 
     @Test
-    void isZero() {
+    public void isZero() {
         String[] monoms = { "0", "00x", "x^3", "2", "0x^3", "-4"};
         boolean[] res =   { true,  true ,false, false, true, false };
         for( int i = 0; i<monoms.length; i++){
@@ -71,7 +75,7 @@ class MonomTest1 {
     }
 
     @Test
-    void testEquals() {
+    public void testEquals() {
         String[] monoms1 = {"1", "2x", "5x^2", "0", "-1", "x"};
         String[] monoms2 = {"x^0", "2x^1", "5x^2", "0x", "-1x^0", "x^1"};
         for (int i = 0 ; i< monoms1.length; i++){
@@ -82,7 +86,7 @@ class MonomTest1 {
     }
 
     @Test
-    void add() {
+    public void add() {
         String[] monoms1 = { "1",  "2x", "5x^2" , "0",    "-1", "x"};
         String[] monoms2 = { "2", "-3x", "-5x^2", "3x^3", "-6", "-x"};
         String[] ans =     { "3", "-x",  "0",     "3x^3", "-7", "0"};
@@ -100,7 +104,7 @@ class MonomTest1 {
     }
 
     @Test
-    void multiply() {
+    public void multiply() {
         String[] monoms1 = {"1",  "2x",    "5x^2" , "0",    "-1", "x"};
         String[] monoms2 = {"2",  "-3x"   ,"-x^4", "3x^3", "-6x", "-x"};
         String[] ans =     {"2",  "-6x^2", "-5x^6", "0"  , " 6x", "-x^2"};
@@ -117,7 +121,7 @@ class MonomTest1 {
     }
 
     @Test
-    void testToString() {
+    public void testToString() {
         String[] monoms1 = {"1",     "2x",    "3x^2", "-1x", "0x^4", "0"};
         String[] monoms2 = {"1.0", "2.0x^1", "3.0x^2", "-1.0x^1", "0.0",   "0.0"};
         for (int i =0 ; i <monoms1.length; i++){
@@ -127,11 +131,11 @@ class MonomTest1 {
     }
 
     @Test
-    void initFromString() {
+    public void initFromString() {
     }
 
     @Test
-    void copy() {
+    public void copy() {
         String[] monoms1 = {"1",     "2x",    "3x^2", "-1x", "0x^4", "0"};
         String[] monoms2 = {"1.0", "2.0x^1", "3.0x^2", "-1.0x^1", "0.0",   "0.0"};
         for (int i = 0; i<monoms1.length; i++){
