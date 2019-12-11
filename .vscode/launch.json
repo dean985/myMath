@@ -1,0 +1,28 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - PolynomTest",
+            "request": "launch",
+            "mainClass": "myMath.PolynomTest"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Monom",
+            "request": "launch",
+            "mainClass": "myMath.Monom"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - MonomTest",
+            "request": "launch",
+            "mainClass": "myMath.MonomTest"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - edit_test",
+            "request": "launch",
+            "mainClass": "edit_test"
+        }
+    ]
+}
