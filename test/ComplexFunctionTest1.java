@@ -173,8 +173,8 @@ class ComplexFunctionTest1 {
         ComplexFunction cf2 = new ComplexFunction(p1);
         ComplexFunction cf3 = new ComplexFunction(m);
 
-        assertEquals(true, cf1.equals(cf2));
-        assertEquals(false, cf3.equals(cf2));
-
+        assertTrue(cf1.equals(cf2));
+        assertFalse(cf3.equals(cf2));
+        //return false;
     }
 }
