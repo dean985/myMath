@@ -201,35 +201,24 @@ public class Polynom implements Polynom_able {
 		// assuming (f(x0)*f(x1)<=0, returns f(x2) such that:
 		// (i) x0<=x2<=x1 & (ii) f(x2) < eps
 
-		if (x0 > x1)
-		{
-			throw new RuntimeException("Invalid input for polynom " + this.toString() + " , Check that x0<x1 ");
-		}
-		if (this.f(x0) * this.f(x1) > 0 && this.f(x0) != this.f(x1)) { // latter argument is because of the private
-																		// case - constant monom
+		if (this.f(x0) * this.f(x1) > 0 ) {
 			throw new RuntimeException("For polynom " + this.toString() + " , Check that f(x0)*f(x1)<=0 ");
 		}
-
-		// BS for a root
-		double mid = (x1 + x0) / 2;
-		while ((x1 - x0) >= eps) {
-			mid = (x1 + x0) / 2;
-			if (this.f(mid) == 0) {
-				break;
-			} else if (this.f(mid) > 0) {// * this.f(x0)
-				x1 = mid;
-			} else {
-				x0 = mid;
-			}
-		}
-		if (this.f(mid) <= eps) {
-			return mid;
+		if (this.f(x0) >0){
+			return root (x1,x0,eps);
 		}
 
-		// In case there are no roots, return max value
+		double m = 0.5*(x0+x1);
+		double y_m = this.f(m);
 
-		throw new RuntimeException("no root for the polynom "+ this.toString()+" try rais the epsilon or change the search range");
-
+		if (Math.abs(y_m) < eps){
+			return m;
+		}
+		if (y_m > 0){
+			return root (x0, m, eps);
+		}else {
+			return root(m, x1, eps);
+		}
 	}
 
 	/**

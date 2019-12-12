@@ -1,9 +1,10 @@
 
 //import org.graalvm.compiler.nodes.calc.IntegerDivRemNode;
 
-import org.junit.jupiter.api.Test;
 
-import static org.junit.gen5.api.Assertions.fail;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 
@@ -162,9 +163,9 @@ class ComplexFunctionTest1 {
         ComplexFunction cf = new ComplexFunction("comp", p1,p2);
         assertEquals(24, cf.f(2));
     }
+
     @Test
-    @Override
-    public void equals(Object o){
+     void equalsTest(){
         Polynom p1 = new Polynom("x^2+x");
         Polynom p2 = new Polynom("x+1");
         Monom m = new Monom ("x");
@@ -172,8 +173,8 @@ class ComplexFunctionTest1 {
         ComplexFunction cf2 = new ComplexFunction(p1);
         ComplexFunction cf3 = new ComplexFunction(m);
 
-        assertTrue(cf1.equals(cf2));
-        assertFalse(cf3.equals(cf2));
-        return false;
+        assertEquals(true, cf1.equals(cf2));
+        assertEquals(false, cf3.equals(cf2));
+
     }
 }

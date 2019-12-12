@@ -157,10 +157,13 @@ public class Monom implements function{
 	 * @return if the coeffcient == 0 then return true and set power to 0
 	 */
 	public boolean isZero() {
-		boolean iszero = this.get_coefficient() == 0;
-		if(iszero)
-			this.set_power(0);
-		return iszero;
+//		boolean iszero = this.get_coefficient() <= 0.00001;
+//		if(iszero){
+//			this.set_power(0);
+//		}
+//
+//		return iszero;
+		return Math.abs(get_coefficient()) < EPSILON;
 	}
 
 	/**

@@ -1,13 +1,23 @@
 /**
  * ComplexFunction
  */
+
 public class ComplexFunction implements complex_function{
+                    //////////////////////////////////////////////////////////////////////////////////////////
+                    ///////////////////////////////////////Fields/////////////////////////////////////////////
+                    //////////////////////////////////////////////////////////////////////////////////////////
+
     Operation op ;
     function left;
     function right;
+                    //////////////////////////////////////////////////////////////////////////////////////////
+                    ///////////////////////////////////////Constructors///////////////////////////////////////
+                    //////////////////////////////////////////////////////////////////////////////////////////
 
     public ComplexFunction(){
-        ;
+        this.left = null;
+        this.right = null;
+        this.op = null;
     }
 
     /**
@@ -73,8 +83,16 @@ public class ComplexFunction implements complex_function{
         this.op = Operation.None;
     }
 
+                    //////////////////////////////////////////////////////////////////////////////////////////
+                    ///////////////////////////////////////Methods////////////////////////////////////////////
+                    //////////////////////////////////////////////////////////////////////////////////////////
 
-	@Override
+    /***
+     * A method to give value x to ComplexFunction
+     * @param x
+     * @return double - value of the function at point x
+     */
+    @Override
     public double f(double x) {
         switch (this.op){
             case Plus: return this.left.f(x) + this.right.f(x);
@@ -113,13 +131,13 @@ public class ComplexFunction implements complex_function{
         return 0;
     }
 
-    public boolean isOperator(String s){
+    /*public boolean isOperator(String s){
         if(s.equals("plus")  || s.equals("mul") || s.equals("div") || s.equals("max") ||
                 s.equals("min") || s.equals("comp") || s.equals("none")){
             return true;
         }
         return false;
-    }
+    }*/
 
     /**
      * This function splits the expression into two elements
@@ -148,7 +166,7 @@ public class ComplexFunction implements complex_function{
         return sp;
     }
 
-    private Operation operatorIdentifier (String s){
+    /*private Operation operatorIdentifier (String s){
         Operation op ;
         if (s.equals("plus")){
             op = Operation.Plus;
@@ -175,8 +193,14 @@ public class ComplexFunction implements complex_function{
             op = Operation.Error;
         }
         return op;
-    }
+    }*/
 
+    /**
+     * Method to transform a string from the form of "  mul(x,x+2)   " to the form of ComplexFunction
+     *
+     * @param s
+     * @return function
+     */
     @Override
     public function initFromString(String s)  {
 
@@ -209,7 +233,11 @@ public class ComplexFunction implements complex_function{
         }
 
 
-
+    /**
+     * Inverse function of initFromString
+     * Transforms ComplexFunction to String
+     * @return String
+     */
     @Override
     public String toString(){
 
@@ -237,12 +265,20 @@ public class ComplexFunction implements complex_function{
         return res;
     }
 
+    /**
+     * Makes deep-copy of ComplexFunction
+     * @return function
+     */
     //@Override
     public function copy() {
         function f = new ComplexFunction(this.getOp(), this.left, this.right);
         return f;
     }
 
+    /**
+     * Adds f1 to this ComplexFuntion
+     * @param f1 the function which will be added to this ComplexFunction.
+     */
     @Override
     public void plus(function f1) {
         // This method encapsulate 'this' cf inside the left function of itself
@@ -257,6 +293,10 @@ public class ComplexFunction implements complex_function{
         this.op = Operation.Plus;
     }
 
+    /**
+     * Multiplies f1 and this ComplexFunction
+     * @param f1 the function which will be multuplied to this ComplexFunction.
+     */
     @Override
     public void mul(function f1) {
         if (this.left != null){
@@ -267,6 +307,10 @@ public class ComplexFunction implements complex_function{
         this.op = Operation.Times;
     }
 
+    /**
+     * Divides this ComplexFunctino by function f1
+     * @param f1 the function which will divide this complex_function.
+     */
     @Override
     public void div(function f1) {
         if (f1 != null && this.left != null){
@@ -312,6 +356,31 @@ public class ComplexFunction implements complex_function{
 
     }
 
+
+    @Override
+    public boolean equals (Object o){
+        boolean eq = false;
+        if (o instanceof ComplexFunction){
+            for(int k = 0; k<10; k++){
+                double diff = 100000*Math.random();
+                double eps = 0.00001;
+                for (double m = diff; m< diff+2; m+=eps){
+                    if (Math.abs(this.f(diff) - ((ComplexFunction) o).f(diff))  <= eps) {
+                        eq = true;
+                    }
+                    else {
+                        eq = false;
+                    }
+                    return eq;
+
+                }
+            }
+        }
+        return false;
+    }
+    //////////////////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////Getters////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////////////////////
     @Override
     public function left() {
         return this.left;
@@ -326,26 +395,6 @@ public class ComplexFunction implements complex_function{
     public Operation getOp() {
         return this.op;
     }
-    @Override
-    public boolean equals (Object o){
-        boolean eq = false;
-        if (o instanceof ComplexFunction){
-            for(int k = 0; k<10; k++){
-                double diff = 100000*Math.random();
-                double eps = 0.00001;
-                for (double m = diff; m< diff+2; m+=eps){
-                    if (Math.abs(this.f(diff) - ((ComplexFunction) o).f(diff))<= eps) {
-                        eq = true;
-                    }
-                    else {
-                        eq = false;
-                    }
-                    return eq;
 
-                }
-            }
-        }
-        return false;
-    }
     
 }
