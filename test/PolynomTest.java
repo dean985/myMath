@@ -92,19 +92,30 @@ public class PolynomTest
     @Test
     void multiply()
     {
-        String [] parameter_1 ={"2","-2","2x","3","x+2","x^2+x+1","x^2+x+1","x^2+x-1"};
-        String [] parameter_2 ={"4","5","2","2x+1","x+2","x","x^2+1","x+2+x^2"};
 
-        String [] ans = {"8","-10","4x","6x+3","x^2+4x+4","x^3+x^2+x","x^4+x^3+2x^2+x+1","x^4+2x^3+2x^2+x-2"};
-
-        for (int i = 0; i <parameter_1.length; i++)
-        {
-            Polynom p_1 = new Polynom(parameter_1[i]);
-            Polynom p_2 = new Polynom(parameter_2[i]);
-            Polynom ans_p = new Polynom(ans[i]);
-            p_1.multiply(p_2);
-            assertEquals(ans_p, p_1,parameter_1[i] + "+" + parameter_2[i]);
+        String[][] polynoms = {{"3x^2","-6x^3","9x","-2"},
+                {"x" , "3x^3"} , {"-18.0x^6" , "9.0x^5" ,"21.0x^4" ,"-3.0x^3", "9.0x^2", "-2.0x"}};
+        Polynom p1 = new Polynom();
+        Polynom p2 = new Polynom();
+        Polynom p3 = new Polynom();
+        for (int i = 0; i < polynoms[0].length; i++) {
+            Monom temp = new Monom(polynoms[0][i]);
+            p1.add(temp);
         }
+        for (int i = 0; i < polynoms[1].length; i++) {
+            Monom temp = new Monom(polynoms[1][i]);
+            p2.add(temp);
+        }
+
+        for (int i = 0; i < polynoms[2].length; i++) {
+            Monom temp = new Monom(polynoms[2][i]);
+            p3.add(temp);
+        }
+        Polynom multiply = new Polynom();
+        multiply = (Polynom) p1.copy();
+        multiply.multiply(p2);
+        assertTrue(multiply.equals(p3));
+
     }
 
     @Test
@@ -129,9 +140,8 @@ public class PolynomTest
     }
 
     @Test
-    void root()
-    {
-
+    void root() {
+/*
         double ans;
          ////////////////////////////////
         ///////// Exaction Tests ///////
@@ -162,14 +172,27 @@ public class PolynomTest
             assertEquals(expected_ans[i],ans,i + ") " + arr + "  (" + low[i] +","+high[i]+") ");
                 //System.out.println("("+ p.toString()+")"+ "       Root: "+ans);
             i++;
-        }
+        }*/
+        String[][] polynoms = {{"3x^2", "-6x^3", "9x", "-2"},
+                {"x", "5x", "0", "-5"},
+                {"4x^6", "-5x^5", "1"}};
+        double[][] res = {{0, 0.2135}, {0, 0.83334}, {2.404, 0.9999}};
+        for (int i = 0; i < polynoms.length; i++) {
+            Polynom p1 = new Polynom();
+            for (int j = 0; j < polynoms[i].length; j++) {
+                Monom temp = new Monom(polynoms[i][j]);
+                p1.add(temp);
+            }
 
+            assertTrue((p1.root(0, 1, 0.0001) - res[i][1]) <= 0.0001);
+
+
+        }
     }
 
 
     @Test
-    void copy()
-    {
+    void copy(){
         Polynom_able p1 = new Polynom("x^2+x+3");
         Polynom_able p2 = (Polynom_able) p1.copy();
 
@@ -196,7 +219,7 @@ public class PolynomTest
     @Test
     void area()
     {
-        String [] parameter_1 ={"x^2+x+2","x^2+x+2","x^2+x+2","2","0","2x^2-2","x+2","x^2+2","x^2-2x"};
+       /* String [] parameter_1 ={"x^2+x+2","x^2+x+2","x^2+x+2","2","0","2x^2-2","x+2","x^2+2","x^2-2x"};
         double [] x0 = {0,1,-2,0,0,0,0,0,0};
         double [] x1 = {1,5,0,3,3,3,3,3,3};
         double [] ans = {2.83,2.83,4.67,6,0,12,10.5,15,0};
@@ -209,6 +232,21 @@ public class PolynomTest
 
             //assertTrue( Math.abs(ans[i] - d) < .0001);
             assertEquals( ans[i],d,i + ") " +parameter_1[i]);
+        }*/
+        String[][] polynoms = {{"3x^2","-6x^3","9x","-2"},
+                                {"x","5x","0","-5"},
+                                 {"4x^6", "-5x^5", "1"}};
+        double[][] res = {{0,0.2135},{0,0.83334},{2.404,0.9999}};
+        for (int i = 0; i < polynoms.length; i++) {
+            Polynom p1 = new Polynom();
+            for (int j = 0; j < polynoms[i].length; j++) {
+                Monom temp = new Monom(polynoms[i][j]);
+                p1.add(temp);
+
+            }
+            assertTrue(p1.area(-1, 0, 0.0001) - res[i][0] <= 0.01);
+
+
         }
     }
 
@@ -234,7 +272,7 @@ public class PolynomTest
     }
 
 
-    @Test
+    /*@Test
     void testMultiply()
     {
         String [] parameter_1 ={"-2-2", "5",    "3","x",    "-x",   "x",    "x^3",   "x^3+x",       "x^3+x^2+5"};
@@ -251,7 +289,7 @@ public class PolynomTest
             assertEquals(ans_p, p_1,parameter_1[i] + "+" + parameter_2[i]);
         }
 
-    }
+    }*/
 
     @Test
     void testToString()

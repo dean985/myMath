@@ -1,14 +1,13 @@
-import org.junit.Assert;
+//import org.junit.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.*;
+
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.fail;
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Note: minor changes (thanks to Amichai!!)
@@ -58,8 +57,8 @@ class Functions_GUITest {
 	@Test
 	void testFunctions_GUI() {
 		Functions_GUI functions_gui = new Functions_GUI();
-		Assert.assertTrue(functions_gui.ff.isEmpty());
-
+		//Assert.assertTrue(functions_gui.ff.isEmpty());
+		assertTrue(functions_gui.ff.isEmpty());
 	}
 
 
