@@ -324,6 +324,10 @@ public class ComplexFunction implements complex_function{
 
     }
 
+    /**
+     * Maximum method for this complex function and a function
+     * @param f1 the function  which will be compared with this ComplexFunction - to compute the maximum.
+     */
     @Override
     public void max(function f1)  {
         if (this.left != null){
@@ -334,6 +338,10 @@ public class ComplexFunction implements complex_function{
         this.op = Operation.Max;
     }
 
+    /**
+     * Minimum method for this complex function and a function
+     * @param f1 the function  which will be compared with this ComplexFunction - to compute the minimum.
+     */
     @Override
     public void min(function f1) {
         if (this.left != null){
@@ -345,6 +353,10 @@ public class ComplexFunction implements complex_function{
 
     }
 
+    /**
+     * This method wrap the f1 complex_function with this function: this.f(f1(x))
+     * @param f1 complex function
+     */
     @Override
     public void comp(function f1)  {
         if (this.left != null){
@@ -356,7 +368,11 @@ public class ComplexFunction implements complex_function{
 
     }
 
-
+    /**
+     * This method checks that two function FROM TYPE complexFunction are equal by their value
+     * @param o - Must be from type ComplexFunction
+     * @return True or False
+     */
     @Override
     public boolean equals (Object o){
         boolean eq = false;
