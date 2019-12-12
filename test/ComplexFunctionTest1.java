@@ -4,8 +4,8 @@
 import org.junit.jupiter.api.Test;
 
 import static org.junit.gen5.api.Assertions.fail;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.fail;
+import static org.junit.jupiter.api.Assertions.*;
+
 
 class ComplexFunctionTest1 {
     @Test
@@ -97,12 +97,7 @@ class ComplexFunctionTest1 {
         ComplexFunction cf = new ComplexFunction(f1);
         cf.plus(f2);
         String res = "plus(1.0x^2+-5.0x^1,1.0x^3)";
-//        System.out.println(f1.f(2));
-//        System.out.println(f2.f(2)+"\n");
-        if (cf.f(2) != 2){
-            System.out.println(cf.f(2));
-            fail();
-        }
+        assertTrue(cf.f(2) == 2);
 
     }
 
@@ -143,9 +138,8 @@ class ComplexFunctionTest1 {
         Polynom p2 = new Polynom("x+x^2");
 
         ComplexFunction cf = new ComplexFunction("max", p1,p2);
-        if (cf.f(2) != 12){
-            fail();
-        }
+
+        assertTrue(cf.f(2) == 12);
 
 
     }
@@ -168,5 +162,18 @@ class ComplexFunctionTest1 {
         ComplexFunction cf = new ComplexFunction("comp", p1,p2);
         assertEquals(24, cf.f(2));
     }
+    @Test
+    @Override
+    public void equals(Object o){
+        Polynom p1 = new Polynom("x^2+x");
+        Polynom p2 = new Polynom("x+1");
+        Monom m = new Monom ("x");
+        ComplexFunction cf1 = new ComplexFunction("mul",p2,m); //equals to p1
+        ComplexFunction cf2 = new ComplexFunction(p1);
+        ComplexFunction cf3 = new ComplexFunction(m);
 
+        assertTrue(cf1.equals(cf2));
+        assertFalse(cf3.equals(cf2));
+        return false;
+    }
 }

@@ -326,6 +326,26 @@ public class ComplexFunction implements complex_function{
     public Operation getOp() {
         return this.op;
     }
+    @Override
+    public boolean equals (Object o){
+        boolean eq = false;
+        if (o instanceof ComplexFunction){
+            for(int k = 0; k<10; k++){
+                double diff = 100000*Math.random();
+                double eps = 0.00001;
+                for (double m = diff; m< diff+2; m+=eps){
+                    if (Math.abs(this.f(diff) - ((ComplexFunction) o).f(diff))<= eps) {
+                        eq = true;
+                    }
+                    else {
+                        eq = false;
+                    }
+                    return eq;
 
+                }
+            }
+        }
+        return false;
+    }
     
 }

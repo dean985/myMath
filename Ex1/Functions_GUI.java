@@ -22,7 +22,7 @@ public class Functions_GUI implements functions {
 
     public static Color[] Colors = {Color.blue, Color.cyan, Color.MAGENTA, Color.ORANGE,
             Color.red, Color.GREEN, Color.PINK};
-    ArrayList<function> ff = new ArrayList<function>();
+    ArrayList<function> ff = new ArrayList<function>() ;
 //
 //      Functions_GUI()
 //      {
@@ -30,18 +30,18 @@ public class Functions_GUI implements functions {
 //      }
 
 
-    public static void main(String[] args) {
-
-            //ff.addAll(init());
-       Functions_GUI functions_gui = new Functions_GUI();
-
-        try {
-            functions_gui.initFromFile("/home/elonezra/IdeaProjects/myMath/myMath/myMath/class1/function_file.txt");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        functions_gui.drawFunctions("/home/elonezra/IdeaProjects/myMath/myMath/myMath/class1/src/main/GUI_params.txt");
-      }
+//    public static void main(String[] args) {
+//
+//            //ff.addAll(init());
+//       Functions_GUI functions_gui = new Functions_GUI();
+//
+//        try {
+//            functions_gui.initFromFile("input/function_file.txt");
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        functions_gui.drawFunctions("input/GUI_params.txt");
+//      }
 
     @Override
     public void initFromFile(String file) throws IOException
@@ -51,14 +51,12 @@ public class Functions_GUI implements functions {
            FileInputStream streamIn = new FileInputStream(file);
            BufferedReader reader = new BufferedReader(new InputStreamReader(streamIn));
            String line = reader.readLine();
-            ff.add(new Polynom("x^2"));
-            ff.add(new Polynom("x^3+4x^2+1"));
 
             while(line != null)
             {
                 System.out.println(line);
-
-               // spoused to have ff.add(new Complexfunction(Function.initFromString(line))
+                function f = new ComplexFunction();
+               ff.add(new ComplexFunction(f.initFromString(line)));
                 line = reader.readLine();
             }
 
@@ -226,9 +224,9 @@ public class Functions_GUI implements functions {
     }
 
     @Override
-    public Iterator<functions> iterator() {
-        functions iterator = (functions) this.ff.iterator();
-        return null;
+    public Iterator<function> iterator() {
+        //functions iterator = (functions) this.ff.iterator();
+        return ff.iterator();
     }
 
     @Override
@@ -241,9 +239,9 @@ public class Functions_GUI implements functions {
         return this.ff.toArray(ts);
     }
 
-    @Override
-    public boolean add(functions functions) {
-        return ff.add((function) functions);
+
+    public boolean add(function functions) {
+        return ff.add(functions);
     }
 
     @Override
@@ -257,11 +255,10 @@ public class Functions_GUI implements functions {
     }
 
     @Override
-    public boolean addAll(Collection<? extends functions> collection)
-    {
-
-        return this.ff.addAll((Collection<? extends function>) collection);
+    public boolean addAll(Collection<? extends function> collection) {
+        return false;
     }
+
 
     @Override
     public boolean removeAll(Collection<?> collection) {

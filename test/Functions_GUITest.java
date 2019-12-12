@@ -1,6 +1,8 @@
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.Iterator;
+
 /**
  * Note: minor changes (thanks to Amichai!!)
  * The use of "get" was replaced by iterator!
@@ -20,10 +22,10 @@ import org.junit.jupiter.api.Test;
 class Functions_GUITest {
 	public static void main(String[] a) {
 		functions data = FunctionsFactory();
-	//	int w=1000, h=600, res=200;
-	  //Range rx = new Range(-10,10);
-	 //	Range ry = new Range(-5,15);
-	//	data.drawFunctions(w,h,rx,ry,res);
+		int w=1000, h=600, res=200;
+	  Range rx = new Range(-10,10);
+	 	Range ry = new Range(-5,15);
+		data.drawFunctions(w,h,rx,ry,res);
 		String file = "input/function_file.txt";
 		String file2 = "function_file2.txt";
 		try {
@@ -82,34 +84,34 @@ class Functions_GUITest {
 		Polynom p1 = new Polynom(s1);
 		Polynom p2 = new Polynom(s2);
 		Polynom p3 = new Polynom(s3[0]);
-		//ComplexFunction cf3 = new ComplexFunction(p3);
+		ComplexFunction cf3 = new ComplexFunction(p3);
 		for(int i=1;i<s3.length;i++) {
-			//cf3.mul(new Polynom(s3[i]));
+			cf3.mul(new Polynom(s3[i]));
 		}
 		
-//		ComplexFunction cf = new ComplexFunction(Operation.Plus, p1,p2);
-//		ComplexFunction cf4 = new ComplexFunction("div", new Polynom("x +1"),cf3);
-//		cf4.plus(new Monom("2"));
-//		ans.add(cf.copy());
-//		ans.add(cf4.copy());
-//		cf.div(p1);
-//		ans.add(cf.copy());
-//		String s = cf.toString();
-//		function cf5 = cf4.initFromString(s1);
-//		function cf6 = cf4.initFromString(s2);
-//		ans.add(cf5.copy());
-//		ans.add(cf6.copy());
-//		Iterator<function> iter = ans.iterator();
-//		function f = iter.next();
-//		ComplexFunction max = new ComplexFunction(f);
-//		ComplexFunction min = new ComplexFunction(f);
-//		while(iter.hasNext()) {
-//			f = iter.next();
-//			max.max(f);
-//			min.min(f);
-//		}
-//		ans.add(max);
-//		ans.add(min);
+		ComplexFunction cf = new ComplexFunction(Operation.Plus, p1,p2);
+		ComplexFunction cf4 = new ComplexFunction("div", new Polynom("x +1"),cf3);
+		cf4.plus(new Monom("2"));
+		ans.add(cf.copy());
+		ans.add(cf4.copy());
+		cf.div(p1);
+		ans.add(cf.copy());
+		String s = cf.toString();
+		function cf5 = cf4.initFromString(s1);
+		function cf6 = cf4.initFromString(s2);
+		ans.add(cf5.copy());
+		ans.add(cf6.copy());
+		Iterator<function> iter = ans.iterator();
+		function f = (function) iter.next();
+		ComplexFunction max = new ComplexFunction(f);
+		ComplexFunction min = new ComplexFunction(f);
+		while(iter.hasNext()) {
+			f = (function) iter.next();
+			max.max(f);
+			min.min(f);
+		}
+		ans.add(max);
+		ans.add(min);
 		return ans;
 	}
 }
