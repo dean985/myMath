@@ -162,9 +162,9 @@ class ComplexFunctionTest1 {
         ComplexFunction cf = new ComplexFunction("comp", p1,p2);
         assertEquals(24, cf.f(2));
     }
+
     @Test
-    @Override
-    public void equals(Object o){
+    public void equalstest(Object o){
         Polynom p1 = new Polynom("x^2+x");
         Polynom p2 = new Polynom("x+1");
         Monom m = new Monom ("x");
@@ -174,6 +174,6 @@ class ComplexFunctionTest1 {
 
         assertTrue(cf1.equals(cf2));
         assertFalse(cf3.equals(cf2));
-        return false;
+        //return false;
     }
 }

@@ -22,33 +22,25 @@ public class Functions_GUI implements functions {
 
     public static Color[] Colors = {Color.blue, Color.cyan, Color.MAGENTA, Color.ORANGE,
             Color.red, Color.GREEN, Color.PINK};
-    ArrayList<function> ff = new ArrayList<function>() ;
-//
-//      Functions_GUI()
-//      {
-//          super();
-//      }
+    ArrayList<function> ff = new ArrayList<function>();
 
+      Functions_GUI()
+      {
+          ff.clear();
+      }
 
-//    public static void main(String[] args) {
-//
-//            //ff.addAll(init());
-//       Functions_GUI functions_gui = new Functions_GUI();
-//
-//        try {
-//            functions_gui.initFromFile("input/function_file.txt");
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//        functions_gui.drawFunctions("input/GUI_params.txt");
-//      }
+    /**
+     *
+     * @param file - the file name
+     * @throws IOException
+     */
 
     @Override
     public void initFromFile(String file) throws IOException
     {
 
         try {
-           FileInputStream streamIn = new FileInputStream(file);
+           FileInputStream streamIn = new FileInputStream("input/"+file);
            BufferedReader reader = new BufferedReader(new InputStreamReader(streamIn));
            String line = reader.readLine();
 
@@ -70,33 +62,57 @@ public class Functions_GUI implements functions {
 
     }
 
+    /**
+     *
+     * @param file - the file name
+     * @throws IOException - throw when occured problem in the file save
+     */
     @Override
     public void saveToFile(String file) throws IOException
     {
 
-        ObjectOutputStream oos;
+        File File = new File("input/"+file);
+        BufferedWriter writer = null;
         try {
-            FileOutputStream fout = new FileOutputStream(file, true);
-            oos = new ObjectOutputStream(fout);
-            oos.writeObject(ff);
-        }
-        catch (FileNotFoundException e) {
+
+            // if file doesn't exists, then create it
+            if (!File.exists()) {
+                File.createNewFile();
+            }
+
+            Iterator<function> iterator = ff.iterator();
+
+            writer = new BufferedWriter(new FileWriter(File));
+
+            while (iterator.hasNext()){
+
+                writer.write(iterator.next().toString()+"\n");
+
+            }
+
+
+            writer.flush();
+            writer.close();
+
+            System.out.println("Done");
+
+        } catch (IOException e) {
             e.printStackTrace();
         }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
-
-
-
     }
 
-
+    /**
+     *
+     * @param width - the width of the window - in pixels
+     * @param height - the height of the window - in pixels
+     * @param rx - the range of the horizontal axis
+     * @param ry - the range of the vertical axis
+     * @param resolution - the number of samples with in rx: the X_step = rx/resulution
+     */
 
     @Override
     public void drawFunctions(int width, int height, Range rx, Range ry, int resolution)
     {
-
         int n = resolution;
         StdDraw.setCanvasSize(width, height);
         int size = ff.size();
@@ -162,16 +178,16 @@ public class Functions_GUI implements functions {
                 StdDraw.line(x[i], yy[a][i], x[i+1], yy[a][i+1]);
             }
         }
-
     }
 
+    /**
+     *
+     * @param json_file - the file with all the parameters for the GUI window.
+     */
     @Override
     public void drawFunctions(String json_file)
     {
-
-
-
-        JSONObject json  = new JSONObject(loadJSONFromAsset(json_file));
+        JSONObject json  = new JSONObject(loadJSONFromAsset("input/"+json_file));
 
          int W=800, H=600, RES=100;
         W = json.getInt("Width");
@@ -185,7 +201,11 @@ public class Functions_GUI implements functions {
 
     }
 
-
+    /**
+     *
+     * @param path - the path to the file
+     * @return - the string  parsed json file
+     */
     public static String loadJSONFromAsset( String path)
     {
         String json = null;
@@ -207,6 +227,8 @@ public class Functions_GUI implements functions {
         }
         return json;
     }
+
+
 
     @Override
     public int size() {
@@ -231,7 +253,8 @@ public class Functions_GUI implements functions {
 
     @Override
     public Object[] toArray() {
-        return new Object[0];
+
+        return this.ff.toArray();
     }
 
     @Override
@@ -256,7 +279,7 @@ public class Functions_GUI implements functions {
 
     @Override
     public boolean addAll(Collection<? extends function> collection) {
-        return false;
+        return this.ff.addAll(collection);
     }
 
 
@@ -276,8 +299,5 @@ public class Functions_GUI implements functions {
         this.ff.clear();
 
     }
-
-
-
 
 }

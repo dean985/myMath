@@ -1,7 +1,14 @@
+import org.junit.Assert;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
+import java.io.*;
+import java.util.ArrayList;
 import java.util.Iterator;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
 
 /**
  * Note: minor changes (thanks to Amichai!!)
@@ -20,13 +27,15 @@ import java.util.Iterator;
  *
  */
 class Functions_GUITest {
+
 	public static void main(String[] a) {
 		functions data = FunctionsFactory();
 		int w=1000, h=600, res=200;
-	  Range rx = new Range(-10,10);
+	  	Range rx = new Range(-10,10);
 	 	Range ry = new Range(-5,15);
 		data.drawFunctions(w,h,rx,ry,res);
-		String file = "input/function_file.txt";
+		String file = "function_file.txt";
+
 		String file2 = "function_file2.txt";
 		try {
 			data.saveToFile(file);
@@ -35,47 +44,120 @@ class Functions_GUITest {
 			data.saveToFile(file2);
 		}
 		catch(Exception e) {e.printStackTrace();}
-		
-		String JSON_param_file = "input/GUI_params.txt";
+
+		String JSON_param_file = "GUI_params.txt";
 		data.drawFunctions(JSON_param_file);
 	}
 	private functions _data=null;
-//	@BeforeAll
-//	static void setUpBeforeClass() throws Exception {
-//	}
 
 	@BeforeEach
 	void setUp() throws Exception {
 		_data = FunctionsFactory();
 	}
 
-	//@Test
+	@Test
 	void testFunctions_GUI() {
-	//	fail("Not yet implemented");
+		Functions_GUI functions_gui = new Functions_GUI();
+		Assert.assertTrue(functions_gui.ff.isEmpty());
+
 	}
 
-	//@Test
-	void testInitFromFile() {
-	//	fail("Not yet implemented");
-	}
 
-	//@Test
+	@Test
 	void testSaveToFile() {
-		
-		
-	}
 
-	//@Test
-	void testDrawFunctions() {
-		//_data.drawFunctions();
-	//	fail("Not yet implemented");
+		ArrayList<function> testf = new ArrayList<>();
+
+		///save the current array list
+		try {
+			_data.saveToFile("testSaveToFile.txt");
+
+		} catch (IOException e) {
+			fail(""+e.getMessage());
+		}
+		Object[] actualArr = new function[_data.size()];
+		actualArr = _data.toArray();
+
+		FileInputStream streamIn = null;
+
+		/// read the file and put to array list
+		try {
+			streamIn = new FileInputStream("input/"+"testSaveToFile.txt");
+			BufferedReader reader = new BufferedReader(new InputStreamReader(streamIn));
+			String line = reader.readLine();
+			while(line != null)
+			{
+				System.out.println(line);
+				function f = new ComplexFunction();
+				testf.add(new ComplexFunction(f.initFromString(line)));
+				line = reader.readLine();
+			}
+
+
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		///check if what i saved is similar to what saved in the file
+		for (int i = 0; i < testf.size(); i++) {
+			assertEquals(testf.get(i).toString(),actualArr[i].toString());
+
+		}
+
+
 	}
 
 	@Test
-	void testDrawFunctionsIntIntRangeRangeInt() {
-		_data.drawFunctions("input/GUI_params.txt");
-		//fail("Not yet implemented");
+	void testInitFromFile() {
+
+		ArrayList<function> testf = new ArrayList<>();
+		ArrayList<function> axpected = new ArrayList<>();
+/////////////////////////call initFromfile///////////////////////
+		try {
+			_data.initFromFile("function_file.txt");
+
+		} catch (IOException e) {
+			fail("fail the reading");
+		}
+		Object[] actualArr = new function[_data.size()];
+		actualArr = _data.toArray();
+/////////////////////////////////////////////////////////////////////
+
+
+///////////////////////read the file and put it in arrty//////////////////////////
+		FileInputStream streamIn = null;
+
+		/// read the file and put to array list
+		try {
+			streamIn = new FileInputStream("input/"+"function_file.txt");
+			BufferedReader reader = new BufferedReader(new InputStreamReader(streamIn));
+			String line = reader.readLine();
+			while(line != null)
+			{
+				System.out.println(line);
+				function f = new ComplexFunction();
+				testf.add(new ComplexFunction(f.initFromString(line)));
+				line = reader.readLine();
+			}
+
+
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	///check if what i saved is similar to what saved in the file
+		for (int i = 0; i < testf.size(); i++) {
+			assertEquals(testf.get(i).toString(),actualArr[i].toString());
+
+		}
+
 	}
+
+
+
 	public static functions FunctionsFactory() {
 		functions ans = new Functions_GUI();
 		String s1 = "3.1 +2.4x^2 -x^4";
