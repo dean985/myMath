@@ -1,10 +1,11 @@
+package Ex1;
 
 import java.util.Comparator;
 
 /**
- * This class represents a simple "Monom" of shape a*x^b, where a is a real number and a is an integer (summed a none negative), 
+ * This class represents a simple "Ex1.Monom" of shape a*x^b, where a is a real number and a is an integer (summed a none negative),
  * see: https://en.wikipedia.org/wiki/Monomial 
- * The class implements function and support simple operations as: construction, value at x, derivative, add and multiply. 
+ * The class implements Ex1.function and support simple operations as: construction, value at x, derivative, add and multiply.
  * @author Dean and Elon inc(c)
  *
  */
@@ -108,8 +109,8 @@ public class Monom implements function{
 
 
 	/**
-	 * the function return a monom with zero value
-	 * @return Monom(Zero)
+	 * the Ex1.function return a monom with zero value
+	 * @return Ex1.Monom(Zero)
 	 */
 	private static Monom getNewZeroMonom() {return new Monom(ZERO);}
 
@@ -123,7 +124,7 @@ public class Monom implements function{
 	private void set_coefficient(double a){this._coefficient = a;}
 
 	private void set_power(int p) {
-		if(p<0) {throw new RuntimeException("ERR the power of Monom should not be negative, got: "+p);}
+		if(p<0) {throw new RuntimeException("ERR the power of Ex1.Monom should not be negative, got: "+p);}
 		this._power = p;
 	}
 
@@ -208,7 +209,7 @@ public class Monom implements function{
 			return;
 		}
 		else
-			throw new RuntimeException("Monom Error - Unabled to sum the monom");
+			throw new RuntimeException("Ex1.Monom Error - Unabled to sum the monom");
 
 	}
 

@@ -1,3 +1,4 @@
+package Ex1;
 
 /**
  * This class represents a simple 1D range of shape [min,max]
@@ -17,7 +18,7 @@ public class Range {
 	}
 	public String toString() {
 		String ans = "["+this.get_min()+","+this.get_max()+"]";
-		if(this.isEmpty()) {ans = "Empty Range";}
+		if(this.isEmpty()) {ans = "Empty Ex1.Range";}
 		return ans;
 	}
 	public boolean isEmpty() {

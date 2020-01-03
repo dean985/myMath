@@ -5,10 +5,10 @@ class1/target/classes/ex1/cont_function.class
 class1/target/classes/ex1/function.class
 class1/target/classes/ex1/Monom.class
 class1/target/classes/ex1/Monom_Comperator.class
-class1/target/classes/ex1/MonomTest.class
+class1/target/classes/ex1/Ex1Testing.MonomTest.class
 class1/target/classes/ex1/Polynom.class
 class1/target/classes/ex1/Polynom_able.class
-class1/target/classes/ex1/PolynomTest.class
+class1/target/classes/ex1/Ex1Testing.PolynomTest.class
 class1/target/test-classes/ex1/AppTest.class
 class1/.attach_pid2299
 class1/.attach_pid2855
@@ -39,10 +39,10 @@ class1/target/classes/ex1/cont_function.class
 class1/target/classes/ex1/function.class
 class1/target/classes/ex1/Monom.class
 class1/target/classes/ex1/Monom_Comperator.class
-class1/target/classes/ex1/MonomTest.class
+class1/target/classes/ex1/Ex1Testing.MonomTest.class
 class1/target/classes/ex1/Polynom.class
 class1/target/classes/ex1/Polynom_able.class
-class1/target/classes/ex1/PolynomTest.class
+class1/target/classes/ex1/Ex1Testing.PolynomTest.class
 class1/target/test-classes/ex1/AppTest.class
 class1/.attach_pid5205
 class1/.attach_pid4827

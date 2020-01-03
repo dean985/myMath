@@ -1,4 +1,7 @@
+package Ex1Testing;
 
+import Ex1.Monom;
+import Ex1.function;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -24,7 +27,7 @@ public class MonomTest
         int[] power =     { 1,    0,   1 ,   3,     5,     6,      0,        2  ,      1 };
         for( int i =0; i< monoms.length; i++){
             Monom m = new Monom(monoms[i]);
-                assertEquals(power[i], m.get_power(), "Monom - " + monoms[i] + " is wrong");
+                assertEquals(power[i], m.get_power(), "Ex1.Monom - " + monoms[i] + " is wrong");
         }
     }
 

@@ -1,6 +1,7 @@
+package Ex1;
 
 /**
- * The interface represents a continuance function 
+ * The interface represents a continuance Ex1.function
  * @author Boaz
  *
  */ 
@@ -10,7 +11,7 @@ public interface cont_function extends function{
 	 * @param x0 starting point
 	 * @param x1 end point
 	 * @param eps positive step value
-	 * @return the approximated area above X-axis below this function bounded in the range of [x0,x1]
+	 * @return the approximated area above X-axis below this Ex1.function bounded in the range of [x0,x1]
 	 */
     double area(double x0, double x1, double eps);
 	
@@ -23,7 +24,7 @@ public interface cont_function extends function{
 	 * @param x0 starting point
 	 * @param x1 end point
 	 * @param eps>0 (positive) representing the epsilon range the solution should be within.
-	 * @return an approximated value (root) for this (cont.) function 
+	 * @return an approximated value (root) for this (cont.) Ex1.function
 	 */
     double root(double x0, double x1, double eps);
 }

@@ -1,5 +1,7 @@
+package Ex1;
+
 /**
- * ComplexFunction
+ * Ex1.ComplexFunction
  */
 
 public class ComplexFunction implements complex_function{
@@ -40,7 +42,7 @@ public class ComplexFunction implements complex_function{
             this.op = Operation.Times;
         }
         else if (string.equals("divide" ) || string.equals("div")){
-            this.op = Operation.Divide;
+            this.op = Operation.Divid;
         }
         else if (string.equals("max")){
             this.op = Operation.Max;
@@ -88,16 +90,16 @@ public class ComplexFunction implements complex_function{
                     //////////////////////////////////////////////////////////////////////////////////////////
 
     /***
-     * A method to give value x to ComplexFunction
+     * A method to give value x to Ex1.ComplexFunction
      * @param x
-     * @return double - value of the function at point x
+     * @return double - value of the Ex1.function at point x
      */
     @Override
     public double f(double x) {
         switch (this.op){
             case Plus: return this.left.f(x) + this.right.f(x);
             case Times: return this.left.f(x) * this.right.f(x);
-            case Divide:
+            case Divid:
                 if (this.right.f(x) == 0){
                     throw new RuntimeException("Right argument is zero, aborted");
                 }else{
@@ -140,7 +142,7 @@ public class ComplexFunction implements complex_function{
     }*/
 
     /**
-     * This function splits the expression into two elements
+     * This Ex1.function splits the expression into two elements
      * Example op(p1,op(p2,p3))   will return index 5 of the string
      * @param s - complexFunction string
      * @return split point
@@ -166,40 +168,40 @@ public class ComplexFunction implements complex_function{
         return sp;
     }
 
-    /*private Operation operatorIdentifier (String s){
-        Operation op ;
+    /*private Ex1.Operation operatorIdentifier (String s){
+        Ex1.Operation op ;
         if (s.equals("plus")){
-            op = Operation.Plus;
+            op = Ex1.Operation.Plus;
         }
         if (s.equals("mul")){
-            op = Operation.Times;
+            op = Ex1.Operation.Times;
         }
         if (s.equals("div")){
-            op = Operation.Divide;
+            op = Ex1.Operation.Divide;
         }
         if (s.equals("max")){
-            op = Operation.Max;
+            op = Ex1.Operation.Max;
         }
         if (s.equals("min")){
-            op = Operation.Min;
+            op = Ex1.Operation.Min;
         }
         if (s.equals("comp")){
-            op = Operation.Comp;
+            op = Ex1.Operation.Comp;
         }
         if (s.equals("none")){
-            op = Operation.None;
+            op = Ex1.Operation.None;
         }
         else{
-            op = Operation.Error;
+            op = Ex1.Operation.Error;
         }
         return op;
     }*/
 
     /**
-     * Method to transform a string from the form of "  mul(x,x+2)   " to the form of ComplexFunction
+     * Method to transform a string from the form of "  mul(x,x+2)   " to the form of Ex1.ComplexFunction
      *
      * @param s
-     * @return function
+     * @return Ex1.function
      */
     @Override
     public function initFromString(String s)  {
@@ -234,8 +236,8 @@ public class ComplexFunction implements complex_function{
 
 
     /**
-     * Inverse function of initFromString
-     * Transforms ComplexFunction to String
+     * Inverse Ex1.function of initFromString
+     * Transforms Ex1.ComplexFunction to String
      * @return String
      */
     @Override
@@ -246,7 +248,7 @@ public class ComplexFunction implements complex_function{
         if (this.op != Operation.None){
             if (this.op == Operation.Plus ) res+="plus(";
             if (this.op == Operation.Times ) res+="mul(";
-            if (this.op == Operation.Divide ) res+="div(";
+            if (this.op == Operation.Divid ) res+="div(";
             if (this.op == Operation.Max ) res+="max(";
             if (this.op == Operation.Min ) res+="min(";
             if (this.op == Operation.Comp) res+="comp(";
@@ -266,8 +268,8 @@ public class ComplexFunction implements complex_function{
     }
 
     /**
-     * Makes deep-copy of ComplexFunction
-     * @return function
+     * Makes deep-copy of Ex1.ComplexFunction
+     * @return Ex1.function
      */
     //@Override
     public function copy() {
@@ -277,12 +279,12 @@ public class ComplexFunction implements complex_function{
 
     /**
      * Adds f1 to this ComplexFuntion
-     * @param f1 the function which will be added to this ComplexFunction.
+     * @param f1 the Ex1.function which will be added to this Ex1.ComplexFunction.
      */
     @Override
     public void plus(function f1) {
-        // This method encapsulate 'this' cf inside the left function of itself
-        // Puts f1 as the right function
+        // This method encapsulate 'this' cf inside the left Ex1.function of itself
+        // Puts f1 as the right Ex1.function
         // changes the op to Plus
         // This solution will repeate with small changes throughout this class
         if (this.left != null){
@@ -294,8 +296,8 @@ public class ComplexFunction implements complex_function{
     }
 
     /**
-     * Multiplies f1 and this ComplexFunction
-     * @param f1 the function which will be multuplied to this ComplexFunction.
+     * Multiplies f1 and this Ex1.ComplexFunction
+     * @param f1 the Ex1.function which will be multuplied to this Ex1.ComplexFunction.
      */
     @Override
     public void mul(function f1) {
@@ -308,8 +310,8 @@ public class ComplexFunction implements complex_function{
     }
 
     /**
-     * Divides this ComplexFunctino by function f1
-     * @param f1 the function which will divide this complex_function.
+     * Divides this ComplexFunctino by Ex1.function f1
+     * @param f1 the Ex1.function which will divide this Ex1.complex_function.
      */
     @Override
     public void div(function f1) {
@@ -317,7 +319,7 @@ public class ComplexFunction implements complex_function{
             ComplexFunction cf1 = new ComplexFunction(this.op, this.left, this.right);
             this.left = cf1;
             this.right = f1;
-            this.op = Operation.Divide;
+            this.op = Operation.Divid;
         }else{
             throw new RuntimeException("Can't divide by zero");
         }
@@ -325,8 +327,8 @@ public class ComplexFunction implements complex_function{
     }
 
     /**
-     * Maximum method for this complex function and a function
-     * @param f1 the function  which will be compared with this ComplexFunction - to compute the maximum.
+     * Maximum method for this complex Ex1.function and a Ex1.function
+     * @param f1 the Ex1.function  which will be compared with this Ex1.ComplexFunction - to compute the maximum.
      */
     @Override
     public void max(function f1)  {
@@ -339,8 +341,8 @@ public class ComplexFunction implements complex_function{
     }
 
     /**
-     * Minimum method for this complex function and a function
-     * @param f1 the function  which will be compared with this ComplexFunction - to compute the minimum.
+     * Minimum method for this complex Ex1.function and a Ex1.function
+     * @param f1 the Ex1.function  which will be compared with this Ex1.ComplexFunction - to compute the minimum.
      */
     @Override
     public void min(function f1) {
@@ -354,8 +356,8 @@ public class ComplexFunction implements complex_function{
     }
 
     /**
-     * This method wrap the f1 complex_function with this function: this.f(f1(x))
-     * @param f1 complex function
+     * This method wrap the f1 Ex1.complex_function with this Ex1.function: this.f(f1(x))
+     * @param f1 complex Ex1.function
      */
     @Override
     public void comp(function f1)  {
@@ -369,8 +371,8 @@ public class ComplexFunction implements complex_function{
     }
 
     /**
-     * This method checks that two function FROM TYPE complexFunction are equal by their value
-     * @param o - Must be from type ComplexFunction
+     * This method checks that two Ex1.function FROM TYPE complexFunction are equal by their value
+     * @param o - Must be from type Ex1.ComplexFunction
      * @return True or False
      */
     @Override

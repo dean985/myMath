@@ -1,14 +1,11 @@
+package Ex1;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.InputMismatchException;
 import java.util.Iterator;
-import java.util.function.Predicate;
-
 
 
 /**
- * This class represents a Polynom with add, multiply functionality, it also
+ * This class represents a Ex1.Polynom with add, multiply functionality, it also
  * should support the following: 1. Riemann's Integral:
  * https://en.wikipedia.org/wiki/Riemann_integral 2. Finding a numerical value
  * between two values (currently support root only f(x)=0). 3. Derivative
@@ -23,7 +20,7 @@ public class Polynom implements Polynom_able {
 	////////////// fields ///////////////
 	////////////////////////////////////////////
 
-	ArrayList<Monom> polynom_list = new ArrayList<Monom>();
+	public ArrayList<Monom> polynom_list = new ArrayList<Monom>();
 
 	/////////////////////////////////////////////////////////////////
 	/////////////////// Constructor /////////////////////////
@@ -38,9 +35,9 @@ public class Polynom implements Polynom_able {
 	}
 
 	/**
-	 * init a Polynom from a String such as: {"x", "3+1.4X^3-34x","3","2x^4"};
+	 * init a Ex1.Polynom from a String such as: {"x", "3+1.4X^3-34x","3","2x^4"};
 	 * 
-	 * @param s: is a string represents a Polynom
+	 * @param s: is a string represents a Ex1.Polynom
 	 */
 	public Polynom(String s) {
 
@@ -114,7 +111,7 @@ public class Polynom implements Polynom_able {
 	}
 
 	/**
-	 *  get Polynom_able p1 and add it to this
+	 *  get Ex1.Polynom_able p1 and add it to this
 	 *
 	 * @param p1
 	 */
@@ -127,8 +124,8 @@ public class Polynom implements Polynom_able {
 	}
 
 	/**
-	 * the function add Monom to the Polynom, the answer get in the Polynom obj
-	 * @param m1 Monom
+	 * the Ex1.function add Ex1.Monom to the Ex1.Polynom, the answer get in the Ex1.Polynom obj
+	 * @param m1 Ex1.Monom
 	 */
 	@Override
 	public void add(Monom m1) {
@@ -171,7 +168,7 @@ public class Polynom implements Polynom_able {
 		Polynom k1 = new Polynom(p1.toString());
 		Polynom k2 = new Polynom(this.toString());
 		k2.substract(k1);
-		//Polynom_able substraction = k2.copy();
+		//Ex1.Polynom_able substraction = k2.copy();
 		return k2.isZero();
 	}
 
@@ -191,7 +188,7 @@ public class Polynom implements Polynom_able {
 	}
 
 	/**
-	 * @param x0,x1 - An interval in the domain of Polynom P , eps - being a
+	 * @param x0,x1 - An interval in the domain of Ex1.Polynom P , eps - being a
 	 *              constant small number (defined)
 	 * @return double x - The point where p(x)=0 Return the root of the polynom for
 	 *         a given interval
@@ -279,7 +276,7 @@ public class Polynom implements Polynom_able {
 //		 double h = (x1 - x0) / n; // partitioning delta x to n partitions
 //		 double _x = x0;
 //		 double mid = _x + h / 2;
-//		 double sum = this.f(_x); // intializing sum as the value of the function in the middle of the interval
+//		 double sum = this.f(_x); // intializing sum as the value of the Ex1.function in the middle of the interval
 //		 int i = 0;
 //		 while (i < n - 1) { // loop to 'run' on each partition, rieman sums
 //			 i++;

@@ -1,6 +1,6 @@
-
+package Ex1;
 /**
- * This interface represents a collection of mathematical functions
+ * This interface represents a collection of mathematical Ex1.functions
  *  which can be presented on a GUI window and can be saved (and load) to file. 
  */
 import java.io.IOException;
@@ -8,7 +8,7 @@ import java.util.Collection;
 
 public interface functions extends Collection<function>{
 	/**
-	 * Init a new collection of functions from a file
+	 * Init a new collection of Ex1.functions from a file
 	 * @param file - the file name
 	 * @throws IOException if the file does not exists of unreadable (wrong format)
 	 */
@@ -20,7 +20,7 @@ public interface functions extends Collection<function>{
  */
 void saveToFile(String file) throws IOException;
 /**
- * Draws all the functions in the collection in a GUI window using the
+ * Draws all the Ex1.functions in the collection in a GUI window using the
  * given parameters for the GUI windo and the range & resolution
  * @param width - the width of the window - in pixels
  * @param height - the height of the window - in pixels
@@ -30,7 +30,7 @@ void saveToFile(String file) throws IOException;
  */
 void drawFunctions(int width, int height, Range rx, Range ry, int resolution);
 /**
- * Draws all the functions in the collection in a GUI window using the given JSON file
+ * Draws all the Ex1.functions in the collection in a GUI window using the given JSON file
  * @param json_file - the file with all the parameters for the GUI window. 
  * Note: is the file id not readable or in wrong format should use default values. 
  */

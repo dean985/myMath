@@ -1,8 +1,13 @@
+package Ex1Testing;
+
+import Ex1.Monom;
+import Ex1.Polynom;
+import Ex1.Polynom_able;
+import Ex1.function;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
@@ -148,9 +153,9 @@ public class PolynomTest
        ////////////////////////////////
         String[] bad_example ={"x^2+2x-1","5"};
         assertThrows(Exception.class, () -> {
-            Polynom p = new Polynom("x^2 +2");
+            Ex1.Polynom p = new Ex1.Polynom("x^2 +2");
 
-            p.root(10, 0, Monom.EPSILON);
+            p.root(10, 0, Ex1.Monom.EPSILON);
 
         } );
 
@@ -164,10 +169,10 @@ public class PolynomTest
         double [] expected_ans = {10.0,1,10,-5,-1.17};
         int i = 0;
         for(String s: arr){
-            Polynom p = new Polynom(s);
+            Ex1.Polynom p = new Ex1.Polynom(s);
 
-            ans = Double.parseDouble(new DecimalFormat("##.##").format( p.root(low[i], high[i], Monom.EPSILON)));
-              // assertEquals( ,p.root(low, high, Monom.EPSILON));
+            ans = Double.parseDouble(new DecimalFormat("##.##").format( p.root(low[i], high[i], Ex1.Monom.EPSILON)));
+              // assertEquals( ,p.root(low, high, Ex1.Monom.EPSILON));
 
             assertEquals(expected_ans[i],ans,i + ") " + arr + "  (" + low[i] +","+high[i]+") ");
                 //System.out.println("("+ p.toString()+")"+ "       Root: "+ans);
@@ -227,7 +232,7 @@ public class PolynomTest
         for (int i = 0; i <parameter_1.length; i++)
         {
 
-            Polynom p_1 = new Polynom(parameter_1[i]);
+            Ex1.Polynom p_1 = new Ex1.Polynom(parameter_1[i]);
             Double d = Double.parseDouble(new DecimalFormat("##.##").format(p_1.area(x0[i],x1[i],0.001)));
 
             //assertTrue( Math.abs(ans[i] - d) < .0001);
@@ -282,9 +287,9 @@ public class PolynomTest
 
         for (int i = 0; i <parameter_1.length; i++)
         {
-            Polynom p_1 = new Polynom(parameter_1[i]);
-            Polynom p_2 = new Polynom(parameter_2[i]);
-            Polynom ans_p = new Polynom(ans[i]);
+            Ex1.Polynom p_1 = new Ex1.Polynom(parameter_1[i]);
+            Ex1.Polynom p_2 = new Ex1.Polynom(parameter_2[i]);
+            Ex1.Polynom ans_p = new Ex1.Polynom(ans[i]);
             p_1.multiply(p_2);
             assertEquals(ans_p, p_1,parameter_1[i] + "+" + parameter_2[i]);
         }
@@ -308,7 +313,7 @@ public class PolynomTest
         }
 
 
-        assertEquals("0.0",new Polynom().toString(), "Monom zero test");
+        assertEquals("0.0",new Polynom().toString(), "Ex1.Monom zero test");
 
 
          /////////////////////////////////
@@ -316,9 +321,9 @@ public class PolynomTest
        /////////////////////////////////
 
         /**
-         * i put Polynom("a") it will make the test good
+         * i put Ex1.Polynom("a") it will make the test good
          *
-         * if i put Polynom("x+1") which is leagle it will fail the testing
+         * if i put Ex1.Polynom("x+1") which is leagle it will fail the testing
          */
 
 

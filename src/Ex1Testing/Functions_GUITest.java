@@ -1,4 +1,5 @@
-//import org.junit.Assertions;
+package Ex1Testing;//import org.junit.Assertions;
+import Ex1.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -38,7 +39,7 @@ class Functions_GUITest {
 		String file2 = "function_file2.txt";
 		try {
 			data.saveToFile(file);
-			Functions_GUI data2 = new Functions_GUI();
+			 Functions_GUI data2 = new Functions_GUI();
 			data2.initFromFile(file);
 			data.saveToFile(file2);
 		}

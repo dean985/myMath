@@ -1,9 +1,12 @@
-
+package Ex1Testing;
 //import org.graalvm.compiler.nodes.calc.IntegerDivRemNode;
 
 
+import Ex1.ComplexFunction;
+import Ex1.Monom;
+import Ex1.Polynom;
+import Ex1.function;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -44,7 +47,7 @@ class ComplexFunctionTest {
         ComplexFunction cf8 = new ComplexFunction("divide", ps[1],ps[0]);
 
 
-        double x = 2; // value to give to function
+        double x = 2; // value to give to Ex1.function
         System.out.println("Value: "+x);
         System.out.println(cf1.toString() +" - "+cf1.f(x));
         System.out.println(cf2.toString() +" - "+cf2.f(x));
@@ -69,7 +72,7 @@ class ComplexFunctionTest {
         String s1 = "plus(-1.0x^4+2.4x^2+3.1,0.1x^5+-1.0x^1+5.0)";
         String s2 = "plus(div(+1.0x +1.0,mul(mul(+1.0x +3.0,+1.0x -2.0),+1.0x -4.0)),2.0)";
         function cf = new ComplexFunction(null) ;
-        //function f = new Polynom("-1.0x^4+2.4x^2+3.1+0.1x^5-1.x+5.0");
+        //Ex1.function f = new Ex1.Polynom("-1.0x^4+2.4x^2+3.1+0.1x^5-1.x+5.0");
 
         cf = cf.initFromString(s1);
         assertEquals(s1, cf.toString());

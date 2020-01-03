@@ -1,4 +1,4 @@
-
+package Ex1;
 
 import java.awt.*;
 import java.io.*;
@@ -14,17 +14,15 @@ import java.util.Iterator;
 //import javax.json.stream.JsonParser;
 
 
-import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 public class Functions_GUI implements functions {
 
     public static Color[] Colors = {Color.blue, Color.cyan, Color.MAGENTA, Color.ORANGE,
             Color.red, Color.GREEN, Color.PINK};
-    ArrayList<function> ff = new ArrayList<function>();
+    public ArrayList<function> ff = new ArrayList<function>();
 
-      Functions_GUI()
+      public Functions_GUI()
       {
           ff.clear();
       }
@@ -169,7 +167,7 @@ public class Functions_GUI implements functions {
 
 
 
-        // plot the approximation to the function
+        // plot the approximation to the Ex1.function
         for(int a=0;a<size;a++) {
             int c = a%Colors.length;
             StdDraw.setPenColor(Colors[c]);
@@ -247,7 +245,7 @@ public class Functions_GUI implements functions {
 
     @Override
     public Iterator<function> iterator() {
-        //functions iterator = (functions) this.ff.iterator();
+        //Ex1.functions iterator = (Ex1.functions) this.ff.iterator();
         return ff.iterator();
     }
 
